@@ -1,6 +1,6 @@
-baseURL = "http://localhost:1313"
+baseURL = "https://brendhacruz.github.io/visualizacao-lab1/"
 languageCode = "en"
-title = "Hugo Blog"
+title = "Boqueirão"
 theme = "hugo-nuo"
 enableRobotsTXT = true
 pygmentsuseclasses = true
@@ -15,7 +15,7 @@ disqusShortname = "disqus_shortname"
 googleAnalytics = "UA-XXXXXXXX-X"
 
 # Copyright of your post
-copyright = "� This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License,please give source if you likes to quote or reproduce."
+copyright = "� This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License,please give source if you likes to quote or reproduce."
 
 # Initial site menu, you can extend menu with content.
 [[menu.main]]
@@ -32,10 +32,10 @@ copyright = "� This post is licensed under a Creative Commons Attribution-NonCom
 
 # Add your own params here
 [params]
-  author = "Ritchie Zhu"
+  author = "brendhacruz"
   avatar = "/img/avatar.jpg"
-  seotitle = "Hugo Blog (SEO Version)"
-  subtitle = "~ Keep It Simple & Stupid ~"
+  seotitle = "Boqueirão"
+  subtitle = "~ Visualização de Volume ~"
   description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
   paginate = 10
 
