@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Hugo Blog</title>
+    <title>Tags on Boqueirão</title>
     <link>https://brendhacruz.github.io/visualizacao-lab1/tags/</link>
-    <description>Recent content in Tags on Hugo Blog</description>
+    <description>Recent content in Tags on Boqueirão</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>� This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License,please give source if you likes to quote or reproduce.</copyright>
-
+    
 	<atom:link href="https://brendhacruz.github.io/visualizacao-lab1/tags/index.xml" rel="self" type="application/rss+xml" />
-
-
+    
+    
   </channel>
 </rss>
