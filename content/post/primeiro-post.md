@@ -31,7 +31,7 @@ draft: false
     "height": 150,
 
     "mark": {
-        "type": "line",
+        "type": "area",
         "interpolate": "monotone"
     },
     "selection": {
@@ -56,7 +56,7 @@ draft: false
 
 
 {
-  "data": {"values": [{"y" : 200}]},
+  "data": {"values": [{"y" : 195}]},
   "mark": "rule",
   "encoding": {
     "y": {"field": "y","type": "quantitative"},

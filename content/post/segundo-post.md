@@ -14,59 +14,53 @@ draft: false
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
 <script>
     const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-    "layer": [{
-    "data": {
-        "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-        "format": {
-        "type": "json",
-        "property": "volumes",
-        "parse": {
-            "DataInformacao": "utc:'%d/%m/%Y'"
+      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+        "layer": [{
+        "data": {
+            "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+            "format": {
+            "type": "json",
+            "property": "volumes",
+            "parse": {
+                "DataInformacao": "utc:'%d/%m/%Y'"
+                    }
                 }
-            }
+            },
+
+        "width": 800,
+        "height": 150,
+
+        "mark":"bar",
+        "encoding": {
+        "x": {"field": "DataInformacao", "type": "temporal", "timeUnit": "year",
+                "axis":{
+                "title": "Volume ao longo dos anos"
+                }
         },
-
-    "width": 900,
-    "height": 150,
-
-    "mark": {
-        "type": "line",
-        "interpolate": "monotone"
-    },
-    "selection": {
-      "brush": {"type": "interval", "encodings": ["x"]}
-    },
-    "encoding": {
-      "x": {
-        "timeUnit" : "monthyear",
-        "field": "DataInformacao",
-        "type": "temporal",
-        "axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
-       },
-      "y": {
-        "field": "Volume",
-        "type": "quantitative",
-        "axis": {"tickCount": 30, "grid": false, "title": "Volume"}
-         }
-
-         }
+        "y": {
+            "field": "Volume", "type": "quantitative",
+              "axis":{
+                "title": "Volume"
+              },
+              "aggregate":"mean"
+            }
+      }
        },
 
 
 
-{
-  "data": {"values": [{"y" : 17}]},
-  "mark": "rule",
-  "encoding": {
-    "y": {"field": "y","type": "quantitative"},
-    "color": {"value": "orange"},
-    "size": {"value": 2}
-  }
+    {
+      "data": {"values": [{"y" : 22}]},
+      "mark": "rule",
+      "encoding": {
+        "y": {"field": "y","type": "quantitative"},
+        "color": {"value": "orange"},
+        "size": {"value": 2}
+      }
 
-}
-    ]
-     }
+    }
+        ]
+      }
 
 ;
   	vegaEmbed('#vis', spec).catch(console.warn);

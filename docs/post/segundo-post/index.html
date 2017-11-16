@@ -218,36 +218,30 @@
             }
         },
 
-    "width": 900,
+    "width": 800,
     "height": 150,
 
-    "mark": {
-        "type": "line",
-        "interpolate": "monotone"
-    },
-    "selection": {
-      "brush": {"type": "interval", "encodings": ["x"]}
-    },
+    "mark":"bar",
     "encoding": {
-      "x": {
-        "timeUnit" : "monthyear",
-        "field": "DataInformacao",
-        "type": "temporal",
-        "axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
-       },
-      "y": {
-        "field": "Volume",
-        "type": "quantitative",
-        "axis": {"tickCount": 30, "grid": false, "title": "Volume"}
-         }
-
-         }
-       },
+    "x": {"field": "DataInformacao", "type": "temporal", "timeUnit": "year",
+            "axis":{
+            "title": "Volume ao longo dos anos"
+            }
+    },
+    "y": {
+        "field": "Volume", "type": "quantitative",
+          "axis":{
+            "title": "Volume"
+          },
+          "aggregate":"mean"
+        }
+  }
+   },
 
 
 
 {
-  "data": {"values": [{"y" : 17}]},
+  "data": {"values": [{"y" : 22}]},
   "mark": "rule",
   "encoding": {
     "y": {"field": "y","type": "quantitative"},
@@ -257,7 +251,8 @@
 
 }
     ]
-     }
+  }
+
 
 ;
     vegaEmbed('#vis', spec).catch(console.warn);
@@ -270,8 +265,9 @@
       </p>
     </footer>
 
-      <h1>Menor Volume de Água já Registrado dentre os anos de 1990 a 2017 é possível notar que o menor volume de agua
-      acontece em 2017.</h1>
+      <p>O período de 2016 a 2017 registra o menor volume de água dos anos analisados, é possível perceber no gráfico acima que de 2012 a 2017 o volume só vem decaindo,
+        ou seja, em um período de 5 anos, o açude não teve nenhuma época de cheias, chegando ao volume morto do mesmo. Sem chuvas, a tendência é que a situação permaneça
+        a mesma, ou piore. Mesmo com campanhas de racionamento de água e com a transposição do rio São Francisco, o volume ainda continua muito abaixo do desejado.</p>
 
 
       <div id="disqus_thread"></div>
