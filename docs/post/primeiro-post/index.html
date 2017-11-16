@@ -15,14 +15,14 @@
 
 
   <meta name="author" content="brendhacruz" />
-  <meta name="description" />
+  <meta name="description"/>
 
 
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Volume de Água" />
-    <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
+    <meta name="twitter:title" content="Período de secas ao longo dos anos" />
+    <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 950, &#34;height&#34;: 120, &#34;mark&#34;: { &#34;type&#34;: &#34;line&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
 
 
@@ -32,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/primeiro-post/" />
+<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/" />
 <link rel="alternative" href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" title="Boqueirão" type="application/atom+xml" />
 
 
@@ -205,59 +205,60 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
 <script>
     const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
-    "layer": [{
-    "data": {
-        "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
-        "format": {
-        "type": "json",
-        "property": "volumes",
-        "parse": {
-            "DataInformacao": "utc:'%d/%m/%Y'"
-                }
-            }
-        },
+      "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+      "layer": [{
+      "data": {
+          "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+          "format": {
+          "type": "json",
+          "property": "volumes",
+          "parse": {
+              "DataInformacao": "utc:'%d/%m/%Y'"
+                  }
+              }
+          },
 
-    "width": 900,
-    "height": 150,
+      "width": 900,
+      "height": 150,
 
-    "mark": {
-        "type": "line",
-        "interpolate": "monotone"
-    },
-    "selection": {
-      "brush": {"type": "interval", "encodings": ["x"]}
-    },
+      "mark": {
+          "type": "line",
+          "interpolate": "monotone"
+      },
+      "selection": {
+        "brush": {"type": "interval", "encodings": ["x"]}
+      },
+      "encoding": {
+        "x": {
+          "timeUnit" : "monthyear",
+          "field": "DataInformacao",
+          "type": "temporal",
+          "axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
+         },
+        "y": {
+          "field": "Volume",
+          "type": "quantitative",
+          "axis": {"tickCount": 30, "grid": false, "title": "Volume "}
+           }
+
+           }
+         },
+
+
+
+  {
+    "data": {"values": [{"y" : 200}]},
+    "mark": "rule",
     "encoding": {
-      "x": {
-        "timeUnit" : "monthyear",
-        "field": "DataInformacao",
-        "type": "temporal",
-        á"axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
-       },
-      "y": {
-        "field": "Volume",
-        "type": "quantitative",
-        "axis": {"tickCount": 30, "grid": false, "title": "Volume "}
-         }
+      "y": {"field": "y","type": "quantitative"},
+      "color": {"value": "orange"},
+      "size": {"value": 2}
+    }
 
-         }
-       },
-
-
-
-{
-  "data": {"values": [{"y" : 200}]},
-  "mark": "rule",
-  "encoding": {
-    "y": {"field": "y","type": "quantitative"},
-    "color": {"value": "orange"},
-    "size": {"value": 2}
   }
-
-}
-    ]
+      ]
      }
+
 ;
     vegaEmbed('#vis', spec).catch(console.warn);
 </script>
@@ -266,6 +267,7 @@
 
       <p class="post-copyright">
         � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA.
+      </p>
     </footer>
 
       <div id="disqus_thread"></div>
