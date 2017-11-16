@@ -5,10 +5,7 @@
   <meta charset="utf-8" />
 
 
-  <title>
-  Posts
-   | Boqueirão
-</title>
+  <title>Menor Volume de Água já Registrado</title>
 
 
 
@@ -18,14 +15,14 @@
 
 
   <meta name="author" content="brendhacruz" />
-  <meta name="description" content="" />
+  <meta name="description"/>
 
 
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Posts" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="Menor Volume de Água já Registrado" />
+    <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 950, &#34;height&#34;: 120, &#34;mark&#34;: { &#34;type&#34;: &#34;line&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
 
 
@@ -35,7 +32,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/" />
+<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/" />
 <link rel="alternative" href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" title="Boqueirão" type="application/atom+xml" />
 
 
@@ -58,15 +55,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Boqueirão" />
 <meta name="msapplication-tooltip" content="Boqueirão" />
-<meta name='msapplication-navbutton-color' content="#159BC0" />
-<meta name="msapplication-TileColor" content="#159BC0" />
+<meta name='msapplication-navbutton-color' content="#159bc0" />
+<meta name="msapplication-TileColor" content="#159bc0" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
 <link rel="icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon.ico" />
 <link rel="icon" type="image/png" sizes="16x16" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-32x32.png" />
 <link rel="icon" sizes="192x192" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-android.png" />
 <link rel="apple-touch-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/safari-pinned-tab.svg" color="#159BC0" />
+<link rel="mask-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/safari-pinned-tab.svg" color="#159bc0" />
 
 
 
@@ -99,6 +96,10 @@
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
 
+
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+
+
     </div>
 
 
@@ -107,7 +108,7 @@
 
   <h2 class="title">Boqueirão</h2>
 
-  <p class="subtitle">Visualização de Volume  de água ao Longo dos Anos</p>
+  <p class="subtitle"> Visualização de Volume  de água ao Longo dos Anos </p>
   <button class="menu-toggle" type="button">
     <span class="icon icon-menu"></span>
   </button>
@@ -192,52 +193,103 @@
   </nav>
 </header>
 
-  <section class="main post-list">
-    <header class="list-header offscreen">
-      <h2 class="list-label">Posts List</h2>
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Menor Volume de Água já Registrado</h1>
+      <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
     </header>
+    <article class="post-content"><div id="vis" width=300></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega/3.0.7/vega.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-lite/2.0.1/vega-lite.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vega-embed/3.0.0-rc7/vega-embed.js"></script>
+<script>
+    const spec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "layer": [{
+    "data": {
+        "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
+        "format": {
+        "type": "json",
+        "property": "volumes",
+        "parse": {
+            "DataInformacao": "utc:'%d/%m/%Y'"
+                }
+            }
+        },
+
+    "width": 900,
+    "height": 150,
+
+    "mark": {
+        "type": "line",
+        "interpolate": "monotone"
+    },
+    "selection": {
+      "brush": {"type": "interval", "encodings": ["x"]}
+    },
+    "encoding": {
+      "x": {
+        "timeUnit" : "monthyear",
+        "field": "DataInformacao",
+        "type": "temporal",
+        "axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
+       },
+      "y": {
+        "field": "Volume",
+        "type": "quantitative",
+        "axis": {"tickCount": 30, "grid": false, "title": "Volume"}
+         }
+
+         }
+       },
 
 
 
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://brendhacruz.github.io/visualizacao-lab1/post/primeiro-post/" class="post-link">Período de secas ao longo dos anos</a></h3>
-    <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
-  </header>
+{
+  "data": {"values": [{"y" : 17}]},
+  "mark": "rule",
+  "encoding": {
+    "y": {"field": "y","type": "quantitative"},
+    "color": {"value": "orange"},
+    "size": {"value": 2}
+  }
 
-  <p class="post-summary"></p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://brendhacruz.github.io/visualizacao-lab1/post/primeiro-post/">>Ver Mais →</a>
-  </footer>
+}
+    ]
+     }
+
+;
+    vegaEmbed('#vis', spec).catch(console.warn);
+</script>
 </article>
+    <footer class="post-footer">
+
+      <p class="post-copyright">
+        � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA.
+      </p>
+    </footer>
+
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
 
 
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/" class="post-link">Menor Volume de Água já Registrado</a></h3>
-    <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
-  </header>
 
-  <p class="post-summary"></p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/">>Ver Mais →</a>
-  </footer>
-</article>
-
-
-        <article class="post-entry">
-  <header class="post-header">
-    <h3 class="post-title"><a href="https://brendhacruz.github.io/visualizacao-lab1/post/terceiro-post/" class="post-link">Maior Volume de Água já Registrado</a></h3>
-    <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
-  </header>
-
-  <p class="post-summary"></p>
-  <footer class="post-footer">
-    <a class="read-more" href="https://brendhacruz.github.io/visualizacao-lab1/post/terceiro-post/">>Ver Mais →</a>
-  </footer>
-</article>
-
-
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
   </section>

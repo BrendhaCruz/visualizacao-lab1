@@ -15,7 +15,7 @@ disqusShortname = "disqus_shortname"
 googleAnalytics = "UA-XXXXXXXX-X"
 
 # Copyright of your post
-copyright = "� This post is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License,please give source if you likes to quote or reproduce."
+copyright = "� Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA."
 
 # Initial site menu, you can extend menu with content.
 [[menu.main]]
@@ -25,35 +25,35 @@ copyright = "� This post is licensed under a Creative Commons Attribution-NonC
   url = "/"
 
 [[menu.main]]
-  name = "Works"
+  name = "Gráfico Geral"
   weight = 20
   identifier = "works"
-  url = "https://github.com/laozhu"
+  url = "https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json"
 
 # Add your own params here
 [params]
   author = "brendhacruz"
   avatar = "/img/avatar.jpg"
   seotitle = "Boqueirão"
-  subtitle = "~ Visualização de Volume ~"
-  description = "Hugo is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again."
+  subtitle = "Visualização de Volume  de água ao Longo dos Anos"
+  description = "Aqui está registrado o volume de água do açude de Boqueirão, que abastece algumas cidades do Estado da Paraíba"
   paginate = 10
 
   # Choose your social networks
   email = "name@domain.com"
   github = "github_username"
   twitter = "twitter_username"
-  linkedin = "linkedin_username"
-  weibo = "weibo_username"
-  wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
-  # facebook = "facebook_username"
+  #linkedin = "linkedin_username"
+  #weibo = "weibo_username"
+  #wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
+   facebook = "facebook_username"
   # google = "googlplus_id_number"
-  # instagram = "instagram_username"
+   instagram = "instagram_username"
   # youtube = "youtube_username"
   # vimeo = "vimeo_username"
   # medium = "medium_username"
   # quora = "quora_username"
-  # pinterest = "pinterest_username"
+   pinterest = "pinterest_username"
   # dribbble = "dribbble_username"
   # behance = "behance_username"
   # jsfiddle = "jsfiddle_username"
