@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
 
-  <title>Volume Percentual de Água</title>
+  <title>Período de secas ao longo dos anos</title>
 
 
 
@@ -108,7 +108,7 @@
 
   <h2 class="title">Boqueirão</h2>
 
-  <p class="subtitle">~ Visualização de Volume ao Longo dos Anos ~</p>
+  <p class="subtitle"> Visualização de Volume ao Longo dos Anos </p>
   <button class="menu-toggle" type="button">
     <span class="icon icon-menu"></span>
   </button>
@@ -195,7 +195,7 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Volume Percentual de Água</h1>
+      <h1 class="post-title">Período de secas ao longo dos anos</h1>
       <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
     </header>
     <article class="post-content"><div id="vis" width=300></div>
@@ -206,6 +206,7 @@
 <script>
     const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v2.json",
+    "layer": [{
     "data": {
         "url": "https://api.insa.gov.br/reservatorios/12172/monitoramento",
         "format": {
@@ -217,11 +218,11 @@
             }
         },
 
-    "width": 500,
-    "height": 120,
+    "width": 900,
+    "height": 150,
 
     "mark": {
-        "type": "area",
+        "type": "line",
         "interpolate": "monotone"
     },
     "selection": {
@@ -232,15 +233,32 @@
         "timeUnit" : "monthyear",
         "field": "DataInformacao",
         "type": "temporal",
-        "axis": {"format": "%Y", "title" : "Volume percentual ao longo dos anos"}
+        "axis": {"format": "%Y", "title" : "Volume ao longo dos anos"}
        },
       "y": {
-        "field": "VolumePercentual",
+        "field": "Volume",
         "type": "quantitative",
-        "axis": {"tickCount": 30, "grid": false, "title": "Volume percentual"}
+        "axis": {"tickCount": 30, "grid": false, "title": "Volume "}
          }
-       }
-     };
+
+         }
+       },
+
+
+
+{
+  "data": {"values": [{"y" : 200}]},
+  "mark": "rule",
+  "encoding": {
+    "y": {"field": "y","type": "quantitative"},
+    "color": {"value": "orange"},
+    "size": {"value": 2}
+  }
+
+}
+    ]
+     }
+;
     vegaEmbed('#vis', spec).catch(console.warn);
 </script>
 </article>
