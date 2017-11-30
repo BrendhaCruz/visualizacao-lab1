@@ -61,8 +61,8 @@ draft: false
             y.domain([min10,max10])
             y.range([alturaVis,0]);  
 
-        var month = function(dado){
-          if (dado.mes > 1 & dado.mes < 6  ) {
+        var color = function(dado){
+          if (dado.mes > 0 & dado.mes < 5  ) {
             return 'blue'
           }
           else{
@@ -70,6 +70,39 @@ draft: false
           }
 
         }
+
+        function mes(num) {
+          var str = '';
+          if(num === 1){
+            return str = 'Janeiro'
+          }
+          if(num === 2){
+            return str = 'Fevereiro'
+          }
+          if(num === 3){
+            return str = 'Março'
+          }if(num === 4){
+            return str = 'Abril'
+          }if(num === 5){
+            return str = 'Maio'
+          }if(num === 6){
+            return str = 'Junho'
+          }if(num === 7){
+            return str = 'Julho'
+          }if(num === 8){
+            return str = 'Agosto'
+          }if(num === 9){
+            return str = 'Setembro'
+          }if(num === 10){
+            return str = 'Outubro'
+          }if(num === 11){
+            return str = 'Novembro'
+          }if(num === 12){
+            return str = 'Dezembro'
+          }
+
+
+          return str}
 
         grafico.selectAll('g')
                 .data(dados)
@@ -79,7 +112,15 @@ draft: false
                     .attr('cy', d => y(d['dez_percentil']))
                     .attr('r', 10)
                     .attr('height', (d) => alturaVis - y(d['dez_percentil']))
-                    .attr('fill', (d) => month(d))
+                    .attr('fill', (d) => color(d))
+
+        grafico.selectAll('g')
+  			.data(dados)
+  			.enter()
+  			.append('text')
+  			.attr("x", d => x(d['noventa-percentil']))
+  			.attr("y", d => y(d['dez_percentil']))
+  			.text(d => mes(d.mes));
 
         grafico.append("g")
                 .attr("class", "x axis")
