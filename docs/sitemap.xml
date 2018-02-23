@@ -28,12 +28,6 @@
   </url>
   
   <url>
-    <loc>https://brendhacruz.github.io/visualizacao-lab1/</loc>
-    <lastmod>2018-02-21T23:38:58-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://brendhacruz.github.io/visualizacao-lab1/categories/</loc>
     <priority>0</priority>
   </url>
@@ -46,6 +40,12 @@
   
   <url>
     <loc>https://brendhacruz.github.io/visualizacao-lab1/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://brendhacruz.github.io/visualizacao-lab1/</loc>
+    <lastmod>2018-02-21T23:38:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   
