@@ -5,23 +5,15 @@
   <meta charset="utf-8" />
 
 
-  <title>Percentil dos meses chuvosos e não chuvosos</title>
-
-
-
-
-
-
+  <title>Número de crianças (com até 10 anos) que possuem registro civil na Paraíba</title>
 
 
   <meta name="author" content="brendhacruz" />
   <meta name="description"/>
 
-
-
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@twitter_username" />
-    <meta name="twitter:title" content="Percentil dos meses chuvosos e não chuvosos" />
+    <meta name="twitter:title" content="Número de crianças (com até 10 anos) que possuem registro civil na Paraíba" />
     <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 950, &#34;height&#34;: 120, &#34;mark&#34;: { &#34;type&#34;: &#34;line&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
 
@@ -108,7 +100,7 @@
 
   <h2 class="title">Vizualização</h2>
 
-  <p class="subtitle"> Visualização de Volume  de água ao Longo dos Anos </p>
+  <p class="subtitle"> Número de crianças (com até 10 anos) que possuem registro civil na Paraíba</p>
   <button class="menu-toggle" type="button">
     <span class="icon icon-menu"></span>
   </button>
@@ -121,7 +113,6 @@
 
         <li class="menu-item  is-active"><a href="https://brendhacruz.github.io/visualizacao-lab1/">Home</a></li>
 
-        <li class="menu-item "><a href="https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json">Gráfico Geral</a></li>
 
     </ul>
   </nav>
@@ -195,168 +186,20 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Percentil dos meses chuvosos e não chuvosos</h1>
-      <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
+      <h1 class="post-title">Número de crianças (com até 10 anos) que possuem registro civil na Paraíba</h1>
+      <p class="post-meta">@brendhacruz · 21, Feb, 2018 · 1 min read</p>
     </header>
-    <article class="post-content"><div id="vis" width=300></div>
 
+      <img src="https://brendhacruz.github.io/visualizacao-lab1/img/pb-tracts-threshold-lightLeg1" width="auto" height="auto">
 
-
-
-        <script src="https://d3js.org/d3.v4.min.js"></script>
-
-
-
-          <div class="container">
-            <div class="row">
-              <h2>Percentil dos meses chuvosos e não chuvosos</h2>
-            </div>
-            <div class="row mychart" id="chart">
-            </div>
-          </div>
-
-          <script type="text/javascript">
-            "use strict"
-
-              function desenhaBarras(dados) {
-                console.log(dados)
-                var alturaSVG = 400, larguraSVG = 900;
-                var	margin = {top: 0, right: 20, bottom:30, left: 45},
-                    larguraVis = larguraSVG - margin.left - margin.right,
-                    alturaVis = alturaSVG - margin.top - margin.bottom;
-
-
-                var grafico = d3.select('#chart')
-                  .append('svg')
-                    .attr('width', larguraVis + margin.left + margin.right)
-                    .attr('height', alturaVis + margin.top + margin.bottom)
-                  .append('g')
-                    .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-
-
-              console.log(dados)
-
-              var max90 = d3.max(dados, function(d) {
-                  return d['noventa-percentil']+1;
-              });
-
-              var min90 = d3.min(dados, function(d) {
-                  return d['noventa-percentil']-1;
-              });
-
-              var x = d3.scaleLinear()
-                  x.domain([min90, max90])
-                  x.range([0,larguraVis])
-
-              var max10 = d3.max(dados, function(d) {
-                  return d['dez_percentil'] +1;
-              });
-
-              var min10 = d3.min(dados, function(d) {
-                  return d['dez_percentil']-1;
-              });
-
-              var y = d3.scaleLinear()
-                  y.domain([min10,max10])
-                  y.range([alturaVis,0]);
-
-              var color = function(dado){
-                if (dado.mes > 0 & dado.mes < 5  ) {
-                  return 'blue'
-                }
-                else{
-                  return 'orange'
-                }
-
-              }
-
-              function mes(num) {
-                  var str = '';
-                  if(num === 1){
-                    return str = 'Janeiro'
-                  }
-                  if(num === 2){
-                    return str = 'Fevereiro'
-                  }
-                  if(num === 3){
-                    return str = 'Março'
-                  }if(num === 4){
-                    return str = 'Abril'
-                  }if(num === 5){
-                    return str = 'Maio'
-                  }if(num === 6){
-                    return str = 'Junho'
-                  }if(num === 7){
-                    return str = 'Julho'
-                  }if(num === 8){
-                    return str = 'Agosto'
-                  }if(num === 9){
-                    return str = 'Setembro'
-                  }if(num === 10){
-                    return str = 'Outubro'
-                  }if(num === 11){
-                    return str = 'Novembro'
-                  }if(num === 12){
-                    return str = 'Dezembro'
-                  }
-
-
-                  return str}
-
-
-
-              grafico.selectAll('g')
-                      .data(dados)
-                      .enter()
-                        .append('circle')
-                          .attr('cx', d => x(d['noventa-percentil']))
-                          .attr('cy', d => y(d['dez_percentil']))
-                          .attr('r', 10)
-                          .attr('height', (d) => alturaVis - y(d['dez_percentil']))
-                          .attr('fill', (d) => color(d))
-
-            grafico.selectAll('g')
-      			.data(dados)
-      			.enter()
-      			.append('text')
-      			.attr("x", d => x(d['noventa-percentil']))
-      			.attr("y", d => y(d['dez_percentil']))
-      			.text(d => mes(d.mes));
-
-              grafico.append("g")
-                      .attr("class", "x axis")
-                      .attr("transform", "translate(0," + alturaVis + ")")
-                      .call(d3.axisBottom(x));
-
-              grafico.append('g')
-                      .attr('transform', 'translate(0,0)')
-                      .call(d3.axisLeft(y))
-              grafico.append("text")
-                .attr("transform", "translate(-40," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-                .text("10 percentil");
-              grafico.append("text")
-                  .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
-                  .text("90 percentil");
-            }
-            d3.json('boqueirao-por-mes.json', function(dados) {
-              console.log("provavelmente acontece depois")
-              desenhaBarras(dados);
-            });
-            console.log("provavelmente acontece primeiro")
-
-          </script>
-
-
-</article>
     <footer class="post-footer">
 
       <p class="post-copyright">
-        � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA.
+        � Todas as fotes para obtenção dos dados são seguras. Fontes: IBGE.
       </p>
     </footer>
-     <br>
-     <p>1. Pontos com a posição horizontal sendo o 90-percentil e a vertical 10-percentil, e a cor do ponto dizendo se é mês de período chuvoso ou não.
-</p>
+
+      <p></p>
       <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
