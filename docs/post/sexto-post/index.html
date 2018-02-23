@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
   
-  <title>Percentil dos meses chuvosos e não chuvosos</title>
+  <title>Número de aprendizado na Paraíba</title>
 
   
   
@@ -15,14 +15,16 @@
 
   
   <meta name="author" content="brendhacruz" />
-  <meta name="description" content="Percentil dos meses chuvosos e não chuvosos    &#34;use strict&#34; function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraSVG = 900; var margin = {top: 0, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom; var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis &#43; margin.left &#43; margin.right) .attr(&#39;height&#39;, alturaVis &#43; margin.top &#43; margin.bottom) .append(&#39;g&#39;) .attr(&#39;transform&#39;, &#39;translate(&#39; &#43; margin." />
+  <meta name="description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }  
+     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain([-20, -15, -10, -5, 0, 5, 15, 30, 60]) ." />
 
   
   
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Percentil dos meses chuvosos e não chuvosos" />
-    <meta name="twitter:description" content="Percentil dos meses chuvosos e não chuvosos    &#34;use strict&#34; function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraSVG = 900; var margin = {top: 0, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom; var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis &#43; margin.left &#43; margin.right) .attr(&#39;height&#39;, alturaVis &#43; margin.top &#43; margin.bottom) .append(&#39;g&#39;) .attr(&#39;transform&#39;, &#39;translate(&#39; &#43; margin." />
+    <meta name="twitter:title" content="Número de aprendizado na Paraíba" />
+    <meta name="twitter:description" content=".cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }  
+     var svg = d3.select(&#34;svg&#34;), width = &#43;svg.attr(&#34;width&#34;), height = &#43;svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain([-20, -15, -10, -5, 0, 5, 15, 30, 60]) ." />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
   
 
@@ -32,7 +34,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/quarto-post/" />
+<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/sexto-post/" />
 <link rel="alternative" href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" title="Visualização" type="application/atom+xml" />
 
 
@@ -191,156 +193,118 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Percentil dos meses chuvosos e não chuvosos</h1>
-      <p class="post-meta">@brendhacruz · Nov 29, 2017 · 2 min read</p>
+      <h1 class="post-title">Número de aprendizado na Paraíba</h1>
+      <p class="post-meta">@brendhacruz · Feb 21, 2018 · 2 min read</p>
     </header>
-    <article class="post-content"><div id="vis" width=300></div>
+    <article class="post-content"><style>
 
-<script
-src="https://d3js.org/d3.v4.min.js">
-</script>
+.cidades {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+path:hover, path.highlighted {
+  fill: tomato;
+}
+
+div.tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  font-family:"avenir next", Arial, sans-serif;
+  padding: 4px 8px;
+  display: none;
+}
+
+</style>
+
+<p><svg width="1000" height="600"></svg></p>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="legenda-d3-cor.js"></script>
 <script>
-<body>
-  <div class="container">
-    <div class="row">
-      <h2>Percentil dos meses chuvosos e não chuvosos</h2>
-    </div>
-    <div class="row mychart" id="chart">
-    </div>
-  </div>
+
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height");
+
+var path = d3.geoPath();
+
+// a escala de cores
+var color = d3.scaleThreshold()
+      .domain([-20, -15, -10, -5, 0, 5, 15, 30, 60])
+      .range(d3.schemePRGn[9]);
+
+// função aux definida em legenda-d3-cor.js
+desenhaLegenda(-25, 25, color, "Crescimento entre 2011 e 2013 (pp*) (%)")
+
+d3.queue()
+    .defer(d3.json, "geo4-municipios-e-aprendizado-simplificado.json")
+    .await(ready);
+
+function ready(error, dados) {
+  if (error) throw error;
+
+  var cidades = dados.features;
+
+  svg.append("g")
+      .attr("class", "cidades")
+    .selectAll("path")
+    .data(cidades)
+    .enter()
+    .append("path")
+      .attr("fill", d => {valor = d.properties["Crescimento entre 2011 e 2013 (pp*)"]; return valor === "NA" ? '#e0e0eb' : color(valor)})
+      .attr("d", path)
+      .on("mouseover",showTooltip)
+      .on("mousemove",moveTooltip)
+      .on("mouseout",hideTooltip)
+}
+
+// ZOOM
+
+//create zoom handler
+var zoom_handler = d3.zoom()
+    .on("zoom", zoom_actions);
+
+//specify what to do when zoom event listener is triggered
+function zoom_actions(){
+ d3.selectAll("path").attr("transform", d3.event.transform);
+}
+
+//add zoom behaviour to the svg element
+//same as svg.call(zoom_handler);
+zoom_handler(svg);
 
 
-  <script type="text/javascript">
-    "use strict"
+// TOOLTIP
 
-  function desenhaBarras(dados) {
-          console.log(dados)
-          var alturaSVG = 400, larguraSVG = 900;
-          var   margin = {top: 0, right: 20, bottom:30, left: 45},
-              larguraVis = larguraSVG - margin.left - margin.right,
-              alturaVis = alturaSVG - margin.top - margin.bottom;
+//Create a tooltip, hidden at the start
+var tooltip = d3.select("body").append("div").attr("class","tooltip");
+//Position of the tooltip relative to the cursor
+var tooltipOffset = {x: 5, y: -25};
 
+function showTooltip(d) {
+  moveTooltip();
 
-          var grafico = d3.select('#chart')
-            .append('svg')
-              .attr('width', larguraVis + margin.left + margin.right)
-              .attr('height', alturaVis + margin.top + margin.bottom)
-            .append('g')
-              .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+  tooltip.style("display","block")
+  .text(d.properties.Cidade + ": " + d.properties["Crescimento entre 2011 e 2013 (pp*)"] + "%");
+}
 
+//Move the tooltip to track the mouse
+function moveTooltip() {
+  tooltip.style("top",(d3.event.pageY+tooltipOffset.y)+"px")
+      .style("left",(d3.event.pageX+tooltipOffset.x)+"px");
+}
 
-        console.log(dados)
+//Create a tooltip, hidden at the start
+function hideTooltip() {
+  tooltip.style("display","none");
+}
 
-        var max90 = d3.max(dados, function(d) {   
-            return d['noventa-percentil']+1;   
-        });
-
-        var min90 = d3.min(dados, function(d) {    
-            return d['noventa-percentil']-1;  
-        });
-
-        var x = d3.scaleLinear()
-            x.domain([min90, max90])
-            x.range([0,larguraVis])
-
-        var max10 = d3.max(dados, function(d) {    
-            return d['dez_percentil'] +1;  
-        });
-
-        var min10 = d3.min(dados, function(d) {    
-            return d['dez_percentil']-1;  
-        });
-
-        var y = d3.scaleLinear()
-            y.domain([min10,max10])
-            y.range([alturaVis,0]);  
-
-        var color = function(dado){
-          if (dado.mes > 0 & dado.mes < 5  ) {
-            return 'blue'
-          }
-          else{
-            return 'orange'
-          }
-
-        }
-
-        function mes(num) {
-          var str = '';
-          if(num === 1){
-            return str = 'Janeiro'
-          }
-          if(num === 2){
-            return str = 'Fevereiro'
-          }
-          if(num === 3){
-            return str = 'Março'
-          }if(num === 4){
-            return str = 'Abril'
-          }if(num === 5){
-            return str = 'Maio'
-          }if(num === 6){
-            return str = 'Junho'
-          }if(num === 7){
-            return str = 'Julho'
-          }if(num === 8){
-            return str = 'Agosto'
-          }if(num === 9){
-            return str = 'Setembro'
-          }if(num === 10){
-            return str = 'Outubro'
-          }if(num === 11){
-            return str = 'Novembro'
-          }if(num === 12){
-            return str = 'Dezembro'
-          }
-
-
-          return str}
-
-        grafico.selectAll('g')
-                .data(dados)
-                .enter()
-                  .append('circle')
-                    .attr('cx', d => x(d['noventa-percentil']))
-                    .attr('cy', d => y(d['dez_percentil']))
-                    .attr('r', 10)
-                    .attr('height', (d) => alturaVis - y(d['dez_percentil']))
-                    .attr('fill', (d) => color(d))
-
-        grafico.selectAll('g')
-            .data(dados)
-            .enter()
-            .append('text')
-            .attr("x", d => x(d['noventa-percentil']))
-            .attr("y", d => y(d['dez_percentil']))
-            .text(d => mes(d.mes));
-
-        grafico.append("g")
-                .attr("class", "x axis")
-                .attr("transform", "translate(0," + alturaVis + ")")
-                .call(d3.axisBottom(x));
-
-        grafico.append('g')
-                .attr('transform', 'translate(0,0)')
-                .call(d3.axisLeft(y))  
-
-        grafico.append("text")
-          .attr("transform", "translate(-40," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-          .text("10 percentil");
-
-        grafico.append("text")
-            .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
-            .text("90 percentil");
-      }
-    d3.json('boqueirao-por-mes.json', function(dados) {
-      console.log("provavelmente acontece depois")
-      desenhaBarras(dados);
-    });
-    console.log("provavelmente acontece primeiro")
-
-  </script>
- </body>
 </script>
 </article>
     <footer class="post-footer">
