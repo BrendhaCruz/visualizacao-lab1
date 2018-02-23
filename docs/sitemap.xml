@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://brendhacruz.github.io/visualizacao-lab1/post/quinto-post/</loc>
+    <lastmod>2018-02-21T23:38:58-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://brendhacruz.github.io/visualizacao-lab1/post/quarto-post/</loc>
+    <lastmod>2017-11-29T22:40:35-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://brendhacruz.github.io/visualizacao-lab1/post/terceiro-post/</loc>
     <lastmod>2017-11-14T23:38:58-02:00</lastmod>
   </url>
@@ -19,7 +29,7 @@
   
   <url>
     <loc>https://brendhacruz.github.io/visualizacao-lab1/</loc>
-    <lastmod>2017-11-14T23:38:58-02:00</lastmod>
+    <lastmod>2018-02-21T23:38:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -30,7 +40,7 @@
   
   <url>
     <loc>https://brendhacruz.github.io/visualizacao-lab1/post/</loc>
-    <lastmod>2017-11-14T23:38:58-02:00</lastmod>
+    <lastmod>2018-02-21T23:38:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   
