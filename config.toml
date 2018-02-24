@@ -1,6 +1,6 @@
 baseURL = "https://brendhacruz.github.io/visualizacao-lab1/"
 languageCode = "en"
-title = "Boqueirão"
+title = "Visualização"
 theme = "hugo-nuo"
 enableRobotsTXT = true
 pygmentsuseclasses = true
@@ -15,7 +15,7 @@ disqusShortname = "disqus_shortname"
 googleAnalytics = "UA-XXXXXXXX-X"
 
 # Copyright of your post
-copyright = "� Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA."
+copyright = "� Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA, IBGE."
 
 # Initial site menu, you can extend menu with content.
 [[menu.main]]
@@ -25,7 +25,7 @@ copyright = "� Todas as fotes para obtenção dos dados são seguras. Fontes: 
   url = "/"
 
 [[menu.main]]
-  name = "Gráfico Geral"
+  name = "Primeiro Gráfico"
   weight = 20
   identifier = "works"
   url = "https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json"
@@ -34,26 +34,26 @@ copyright = "� Todas as fotes para obtenção dos dados são seguras. Fontes: 
 [params]
   author = "brendhacruz"
   avatar = "/img/avatar.jpg"
-  seotitle = "Boqueirão"
-  subtitle = "Visualização de Volume  de água ao Longo dos Anos"
-  description = "Aqui está registrado o volume de água do açude de Boqueirão, que abastece algumas cidades do Estado da Paraíba"
+  seotitle = "Visualização"
+  subtitle = "Visualização de Gráficos"
+  description = "Aqui estão registradas as visualizações criadas na disciplna Visualização da Informação (UFCG)"
   paginate = 10
 
   # Choose your social networks
-  email = "name@domain.com"
-  github = "github_username"
-  twitter = "twitter_username"
+  email = "brendha.cruz@gmail.com"
+  github = "brendhaCruz"
+  #twitter = "twitter_username"
   #linkedin = "linkedin_username"
   #weibo = "weibo_username"
   #wechat= "/img/qrcode.jpg" # Replace with your wechat qrcode image
-   facebook = "facebook_username"
+  facebook = "Brendha Cruz"
   # google = "googlplus_id_number"
-   instagram = "instagram_username"
+   instagram = "@brendha_cruz"
   # youtube = "youtube_username"
   # vimeo = "vimeo_username"
   # medium = "medium_username"
   # quora = "quora_username"
-   pinterest = "pinterest_username"
+  # pinterest = "pinterest_username"
   # dribbble = "dribbble_username"
   # behance = "behance_username"
   # jsfiddle = "jsfiddle_username"

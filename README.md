@@ -1,3 +1,3 @@
-#Visualização da Informação
+#Visualizaï¿½ï¿½o da Informaï¿½ï¿½o
 
-Lab 1 - visualização do volume de Boqueirão ao longo dos anos.
+Lab 1 - visualizaï¿½ï¿½o de Graficos.

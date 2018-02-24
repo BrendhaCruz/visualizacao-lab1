@@ -1,11 +1,16 @@
 ---
 title: "Percentil dos meses chuvosos e não chuvosos"
+
 date: 2017-11-29T22:40:35-03:00
+
 draft: false
 ---
+<div id="vis" width=300></div>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
+<script
+src="https://d3js.org/d3.v4.min.js">
+</script>
+<script>
 <body>
   <div class="container">
     <div class="row">
@@ -146,4 +151,5 @@ draft: false
     console.log("provavelmente acontece primeiro")
 
   </script>
-</body>
+ </body>
+</script>
