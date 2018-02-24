@@ -4,27 +4,33 @@
 
   <meta charset="utf-8" />
 
-
+  
   <title>Percentil dos meses chuvosos e não chuvosos</title>
 
+  
+  
 
 
 
 
-
-
-
+  
   <meta name="author" content="brendhacruz" />
-  <meta name="description"/>
+  <meta name="description" content="Percentil dos meses chuvosos e não chuvosos   
+&amp;ldquo;use strict&amp;rdquo;
+function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraSVG = 900; var margin = {top: 0, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom;
+ var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis &#43; margin.left &#43; margin.right) .attr(&#39;height&#39;, alturaVis &#43; margin.top &#43; margin.bottom) .append(&#39;g&#39;) .attr(&#39;transform&#39;, &#39;translate(&#39; &#43; margin." />
 
-
-
+  
+  
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@twitter_username" />
+    <meta name="twitter:site" content="@gohugoio" />
     <meta name="twitter:title" content="Percentil dos meses chuvosos e não chuvosos" />
-    <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 950, &#34;height&#34;: 120, &#34;mark&#34;: { &#34;type&#34;: &#34;line&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
+    <meta name="twitter:description" content="Percentil dos meses chuvosos e não chuvosos   
+&amp;ldquo;use strict&amp;rdquo;
+function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraSVG = 900; var margin = {top: 0, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom;
+ var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis &#43; margin.left &#43; margin.right) .attr(&#39;height&#39;, alturaVis &#43; margin.top &#43; margin.bottom) .append(&#39;g&#39;) .attr(&#39;transform&#39;, &#39;translate(&#39; &#43; margin." />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
-
+  
 
 
 
@@ -32,7 +38,7 @@
 <meta name="generator" content="Hugo 0.30.2" />
 
 
-<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/" />
+<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/quarto-post/" />
 <link rel="alternative" href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" title="Visualização" type="application/atom+xml" />
 
 
@@ -55,15 +61,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Visualização" />
 <meta name="msapplication-tooltip" content="Visualização" />
-<meta name='msapplication-navbutton-color' content="#159bc0" />
-<meta name="msapplication-TileColor" content="#159bc0" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
 <meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
-<link rel="icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon.png" />
+<link rel="icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon.ico" />
 <link rel="icon" type="image/png" sizes="16x16" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-16x16.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-32x32.png" />
 <link rel="icon" sizes="192x192" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-android.png" />
 <link rel="apple-touch-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-apple.png" />
-<link rel="mask-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/safari-pinned-tab.svg" color="#159bc0" />
+<link rel="mask-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/safari-pinned-tab.svg" color="#5fbf5e" />
 
 
 
@@ -72,7 +78,7 @@
 <link rel="stylesheet" href="https://brendhacruz.github.io/visualizacao-lab1/css/bundle.css" />
 
 
-
+  
   <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -92,98 +98,94 @@
 
 </head>
   <body>
-
+    
     <div class="suspension">
       <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
-
-
+      
+        
         <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
-
-
+        
+      
     </div>
-
-
+    
+    
   <header class="site-header">
   <img class="avatar" src="https://brendhacruz.github.io/visualizacao-lab1/img/avatar.jpg" alt="Avatar">
-
+  
   <h2 class="title">Visualização</h2>
-
-  <p class="subtitle"> Visualização de Volume  de água ao Longo dos Anos </p>
+  
+  <p class="subtitle">Visualização de Gráficos</p>
   <button class="menu-toggle" type="button">
     <span class="icon icon-menu"></span>
   </button>
   <nav class="site-menu collapsed">
     <h2 class="offscreen">Main Menu</h2>
     <ul class="menu-list">
-
-
-
-
+      
+      
+      
+      
         <li class="menu-item  is-active"><a href="https://brendhacruz.github.io/visualizacao-lab1/">Home</a></li>
-
-        <li class="menu-item "><a href="https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json">Gráfico Geral</a></li>
-
+      
+        <li class="menu-item "><a href="https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json">Primeiro Gráfico</a></li>
+      
     </ul>
   </nav>
   <nav class="social-menu collapsed">
     <h2 class="offscreen">Social Networks</h2>
     <ul class="social-list">
 
-
+      
       <li class="social-item">
-        <a href="mailto:name@domain.com" title="Email"><span class="icon icon-email"></span></a>
+        <a href="mailto:brendha.cruz@gmail.com" title="Email"><span class="icon icon-email"></span></a>
       </li>
 
-
+      
       <li class="social-item">
-        <a href="//github.com/github_username" title="GitHub"><span class="icon icon-github"></span></a>
+        <a href="//github.com/brendhaCruz" title="GitHub"><span class="icon icon-github"></span></a>
       </li>
 
-      <li class="social-item">
-        <a href="//twitter.com/twitter_username" title="Twitter"><span class="icon icon-twitter"></span></a>
-      </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
 
       <li class="social-item">
-        <a href="//weibo.com/weibo_username" title="Weibo"><span class="icon icon-weibo"></span></a>
+        <a href="//www.facebook.com/Brendha%20Cruz" title="Facebook"><span class="icon icon-facebook"></span></a>
       </li>
+
+      
 
       <li class="social-item">
-        <a href="https://brendhacruz.github.io/visualizacao-lab1/img/qrcode.jpg" title="Wechat"><span class="icon icon-wechat"></span></a>
+        <a href="//www.instagram.com/@brendha_cruz" title="Instagram"><span class="icon icon-instagram"></span></a>
       </li>
 
-      <li class="social-item">
-        <a href="//www.linkedin.com/in/linkedin_username" title="Linkedin"><span class="icon icon-linkedin"></span></a>
-      </li>
+      
 
+      
 
+      
 
+      
 
+      
 
+      
 
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
 
       <li class="social-item">
         <a href="https://brendhacruz.github.io/visualizacao-lab1/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
@@ -196,147 +198,164 @@
   <section class="main post-detail">
     <header class="post-header">
       <h1 class="post-title">Percentil dos meses chuvosos e não chuvosos</h1>
-      <p class="post-meta">@brendhacruz · Nov 14, 2017 · 1 min read</p>
+      <p class="post-meta">@brendhacruz · Nov 29, 2017 · 2 min read</p>
     </header>
-    <article class="post-content"><div id="vis" width=300></div>
+    <article class="post-content"><script src="https://d3js.org/d3.v4.min.js"></script>
+
+<p><body>
+  <div class="container">
+    <div class="row">
+      <h2>Percentil dos meses chuvosos e não chuvosos</h2>
+    </div>
+    <div class="row mychart" id="chart">
+    </div>
+  </div></p>
+
+<p><script type="text/javascript">
+    &ldquo;use strict&rdquo;</p>
+
+<p>function desenhaBarras(dados) {
+          console.log(dados)
+          var alturaSVG = 400, larguraSVG = 900;
+          var   margin = {top: 0, right: 20, bottom:30, left: 45},
+              larguraVis = larguraSVG - margin.left - margin.right,
+              alturaVis = alturaSVG - margin.top - margin.bottom;</p>
+
+<pre><code>      var grafico = d3.select('#chart')
+        .append('svg')
+          .attr('width', larguraVis + margin.left + margin.right)
+          .attr('height', alturaVis + margin.top + margin.bottom)
+        .append('g')
+          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
 
+    console.log(dados)
+
+    var max90 = d3.max(dados, function(d) {   
+        return d['noventa-percentil']+1;   
+    });
+
+    var min90 = d3.min(dados, function(d) {    
+        return d['noventa-percentil']-1;  
+    });
+
+    var x = d3.scaleLinear()
+        x.domain([min90, max90])
+        x.range([0,larguraVis])
+
+    var max10 = d3.max(dados, function(d) {    
+        return d['dez_percentil'] +1;  
+    });
+
+    var min10 = d3.min(dados, function(d) {    
+        return d['dez_percentil']-1;  
+    });
+
+    var y = d3.scaleLinear()
+        y.domain([min10,max10])
+        y.range([alturaVis,0]);  
+
+    var color = function(dado){
+      if (dado.mes &gt; 0 &amp; dado.mes &lt; 5  ) {
+        return 'blue'
+      }
+      else{
+        return 'orange'
+      }
+
+    }
+
+    function mes(num) {
+      var str = '';
+      if(num === 1){
+        return str = 'Janeiro'
+      }
+      if(num === 2){
+        return str = 'Fevereiro'
+      }
+      if(num === 3){
+        return str = 'Março'
+      }if(num === 4){
+        return str = 'Abril'
+      }if(num === 5){
+        return str = 'Maio'
+      }if(num === 6){
+        return str = 'Junho'
+      }if(num === 7){
+        return str = 'Julho'
+      }if(num === 8){
+        return str = 'Agosto'
+      }if(num === 9){
+        return str = 'Setembro'
+      }if(num === 10){
+        return str = 'Outubro'
+      }if(num === 11){
+        return str = 'Novembro'
+      }if(num === 12){
+        return str = 'Dezembro'
+      }
 
 
-        <script src="https://d3js.org/d3.v4.min.js"></script>
+      return str}
 
+    grafico.selectAll('g')
+            .data(dados)
+            .enter()
+              .append('circle')
+                .attr('cx', d =&gt; x(d['noventa-percentil']))
+                .attr('cy', d =&gt; y(d['dez_percentil']))
+                .attr('r', 10)
+                .attr('height', (d) =&gt; alturaVis - y(d['dez_percentil']))
+                .attr('fill', (d) =&gt; color(d))
 
+    grafico.selectAll('g')
+        .data(dados)
+        .enter()
+        .append('text')
+        .attr(&quot;x&quot;, d =&gt; x(d['noventa-percentil']))
+        .attr(&quot;y&quot;, d =&gt; y(d['dez_percentil']))
+        .text(d =&gt; mes(d.mes));
 
-          <div class="container">
-            <div class="row">
-              <h2>Percentil dos meses chuvosos e não chuvosos</h2>
-            </div>
-            <div class="row mychart" id="chart">
-            </div>
-          </div>
+    grafico.append(&quot;g&quot;)
+            .attr(&quot;class&quot;, &quot;x axis&quot;)
+            .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
+            .call(d3.axisBottom(x));
 
-          <script type="text/javascript">
-            "use strict"
-              function desenhaBarras(dados) {
-                console.log(dados)
-                var alturaSVG = 400, larguraSVG = 900;
-                var	margin = {top: 0, right: 20, bottom:30, left: 45},
-                    larguraVis = larguraSVG - margin.left - margin.right,
-                    alturaVis = alturaSVG - margin.top - margin.bottom;
-                var grafico = d3.select('#chart')
-                  .append('svg')
-                    .attr('width', larguraVis + margin.left + margin.right)
-                    .attr('height', alturaVis + margin.top + margin.bottom)
-                  .append('g')
-                    .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
-              console.log(dados)
-              var max90 = d3.max(dados, function(d) {
-                  return d['noventa-percentil']+1;
-              });
-              var min90 = d3.min(dados, function(d) {
-                  return d['noventa-percentil']-1;
-              });
-              var x = d3.scaleLinear()
-                  x.domain([min90, max90])
-                  x.range([0,larguraVis])
-              var max10 = d3.max(dados, function(d) {
-                  return d['dez_percentil'] +1;
-              });
-              var min10 = d3.min(dados, function(d) {
-                  return d['dez_percentil']-1;
-              });
-              var y = d3.scaleLinear()
-                  y.domain([min10,max10])
-                  y.range([alturaVis,0]);
-              var color = function(dado){
-                if (dado.mes > 0 & dado.mes < 5  ) {
-                  return 'blue'
-                }
-                else{
-                  return 'orange'
-                }
-              }
-              function mes(num) {
-                  var str = '';
-                  if(num === 1){
-                    return str = 'Janeiro'
-                  }
-                  if(num === 2){
-                    return str = 'Fevereiro'
-                  }
-                  if(num === 3){
-                    return str = 'Março'
-                  }if(num === 4){
-                    return str = 'Abril'
-                  }if(num === 5){
-                    return str = 'Maio'
-                  }if(num === 6){
-                    return str = 'Junho'
-                  }if(num === 7){
-                    return str = 'Julho'
-                  }if(num === 8){
-                    return str = 'Agosto'
-                  }if(num === 9){
-                    return str = 'Setembro'
-                  }if(num === 10){
-                    return str = 'Outubro'
-                  }if(num === 11){
-                    return str = 'Novembro'
-                  }if(num === 12){
-                    return str = 'Dezembro'
-                  }
-                  return str}
-              grafico.selectAll('g')
-                      .data(dados)
-                      .enter()
-                        .append('circle')
-                          .attr('cx', d => x(d['noventa-percentil']))
-                          .attr('cy', d => y(d['dez_percentil']))
-                          .attr('r', 10)
-                          .attr('height', (d) => alturaVis - y(d['dez_percentil']))
-                          .attr('fill', (d) => color(d))
-            grafico.selectAll('g')
-      			.data(dados)
-      			.enter()
-      			.append('text')
-      			.attr("x", d => x(d['noventa-percentil']))
-      			.attr("y", d => y(d['dez_percentil']))
-      			.text(d => mes(d.mes));
-              grafico.append("g")
-                      .attr("class", "x axis")
-                      .attr("transform", "translate(0," + alturaVis + ")")
-                      .call(d3.axisBottom(x));
-              grafico.append('g')
-                      .attr('transform', 'translate(0,0)')
-                      .call(d3.axisLeft(y))
-              grafico.append("text")
-                .attr("transform", "translate(-40," + (alturaVis + margin.top)/2 + ") rotate(-90)")
-                .text("10 percentil");
-              grafico.append("text")
-                  .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
-                  .text("90 percentil");
-            }
-            d3.json('boqueirao-por-mes.json', function(dados) {
-              console.log("provavelmente acontece depois")
-              desenhaBarras(dados);
-            });
-            console.log("provavelmente acontece primeiro")
-          </script>
+    grafico.append('g')
+            .attr('transform', 'translate(0,0)')
+            .call(d3.axisLeft(y))  
 
+    grafico.append(&quot;text&quot;)
+      .attr(&quot;transform&quot;, &quot;translate(-40,&quot; + (alturaVis + margin.top)/2 + &quot;) rotate(-90)&quot;)
+      .text(&quot;10 percentil&quot;);
 
+    grafico.append(&quot;text&quot;)
+        .attr(&quot;transform&quot;, &quot;translate(&quot; + larguraVis/2 +&quot;,&quot; + (alturaVis+margin.bottom) + &quot;)&quot;)
+        .text(&quot;90 percentil&quot;);
+  }
+d3.json('boqueirao-por-mes.json', function(dados) {
+  console.log(&quot;provavelmente acontece depois&quot;)
+  desenhaBarras(dados);
+});
+console.log(&quot;provavelmente acontece primeiro&quot;)
+</code></pre>
+
+<p></script>
+</body></p>
 </article>
     <footer class="post-footer">
-
+      
       <p class="post-copyright">
-        � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA.
+        � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA, IBGE.
       </p>
     </footer>
-     <br>
-     <p>1. Pontos com a posição horizontal sendo o 90-percentil e a vertical 10-percentil, e a cor do ponto dizendo se é mês de período chuvoso ou não.
-</p>
+    
       <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
+    
+    
+    
     };
     (function() {
         if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
@@ -351,13 +370,13 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
+      
+    
   </section>
   <footer class="site-footer">
-  <p>© 2017 Visualização</p>
+  <p>© 2017-2018 Visualização</p>
   <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
-
+  
 </footer>
 
 

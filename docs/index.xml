@@ -8,63 +8,67 @@
     <language>en</language>
     <copyright>� Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA, IBGE.</copyright>
     <lastBuildDate>Wed, 21 Feb 2018 23:38:58 -0200</lastBuildDate>
-
+    
 	<atom:link href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" rel="self" type="application/rss+xml" />
-
-
+    
+    
     <item>
       <title>Número de aprendizado na Paraíba</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/sexto-post/</link>
       <pubDate>Wed, 21 Feb 2018 23:38:58 -0200</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/sexto-post/</guid>
-      <description></description>
+      <description>.cidades { fill: none; stroke: #fff; stroke-linejoin: round; } path:hover, path.highlighted { fill: tomato; } div.tooltip { position: absolute; background-color: white; border: 1px solid black; color: black; font-family:&#34;avenir next&#34;, Arial, sans-serif; padding: 4px 8px; display: none; }  
+     var svg = d3.select(&#34;svg&#34;), width = +svg.attr(&#34;width&#34;), height = +svg.attr(&#34;height&#34;); var path = d3.geoPath(); // a escala de cores var color = d3.scaleThreshold() .domain([-20, -15, -10, -5, 0, 5, 15, 30, 60]) .</description>
     </item>
-
+    
     <item>
       <title>Número de crianças (com até 10 anos) que possuem registro civil na Paraíba</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/quinto-post/</link>
       <pubDate>Wed, 21 Feb 2018 23:38:58 -0200</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/quinto-post/</guid>
       <description></description>
     </item>
-
+    
     <item>
       <title>Percentil dos meses chuvosos e não chuvosos</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/quarto-post/</link>
       <pubDate>Wed, 29 Nov 2017 22:40:35 -0300</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/quarto-post/</guid>
-      <description></description>
+      <description>Percentil dos meses chuvosos e não chuvosos   
+&amp;ldquo;use strict&amp;rdquo;
+function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraSVG = 900; var margin = {top: 0, right: 20, bottom:30, left: 45}, larguraVis = larguraSVG - margin.left - margin.right, alturaVis = alturaSVG - margin.top - margin.bottom;
+ var grafico = d3.select(&#39;#chart&#39;) .append(&#39;svg&#39;) .attr(&#39;width&#39;, larguraVis + margin.left + margin.right) .attr(&#39;height&#39;, alturaVis + margin.top + margin.bottom) .append(&#39;g&#39;) .attr(&#39;transform&#39;, &#39;translate(&#39; + margin.</description>
     </item>
-
+    
     <item>
       <title>Maior Volume de Água já Registrado</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/terceiro-post/</link>
       <pubDate>Tue, 14 Nov 2017 23:38:58 -0200</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/terceiro-post/</guid>
-      <description></description>
+      <description>const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;line&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;</description>
     </item>
-
+    
     <item>
       <title>Menor Volume de Água já Registrado</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/</link>
       <pubDate>Tue, 14 Nov 2017 23:38:58 -0200</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/segundo-post/</guid>
-      <description></description>
+      <description>const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 800, &#34;height&#34;: 150, &#34;mark&#34;:&#34;bar&#34;, &#34;encoding&#34;: { &#34;x&#34;: {&#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;timeUnit&#34;: &#34;year&#34;, &#34;axis&#34;:{ &#34;title&#34;: &#34;Volume ao longo dos anos&#34; } }, &#34;y&#34;: { &#34;field&#34;: &#34;Volume&#34;, &#34;type&#34;: &#34;quantitative&#34;, &#34;axis&#34;:{ &#34;title&#34;: &#34;Volume&#34; }, &#34;aggregate&#34;:&#34;mean&#34; } } }, { &#34;data&#34;: {&#34;values&#34;: [{&#34;</description>
     </item>
-
+    
     <item>
       <title>Período de secas ao longo dos anos</title>
       <link>https://brendhacruz.github.io/visualizacao-lab1/post/primeiro-post/</link>
       <pubDate>Tue, 14 Nov 2017 23:38:58 -0200</pubDate>
-
+      
       <guid>https://brendhacruz.github.io/visualizacao-lab1/post/primeiro-post/</guid>
-      <description></description>
+      <description>const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;</description>
     </item>
-
+    
   </channel>
 </rss>
