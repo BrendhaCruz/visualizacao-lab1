@@ -1,6 +1,6 @@
 ---
 
-title: "Número de aprendizado na Paraíba"
+title: "Crescimento da Educação nos municípios entre 2011 e 2013 (pp)"
 
 date: 2018-02-21T23:38:58-02:00
 
