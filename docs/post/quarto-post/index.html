@@ -200,148 +200,151 @@ function desenhaBarras(dados) { console.log(dados) var alturaSVG = 400, larguraS
       <h1 class="post-title">Percentil dos meses chuvosos e não chuvosos</h1>
       <p class="post-meta">@brendhacruz · Nov 29, 2017 · 2 min read</p>
     </header>
-    <article class="post-content"><script src="https://d3js.org/d3.v4.min.js"></script>
+    <article class="post-content">
+      <script src="https://d3js.org/d3.v4.min.js"></script>
 
-<p><body>
-  <div class="container">
-    <div class="row">
-      <h2>Percentil dos meses chuvosos e não chuvosos</h2>
-    </div>
-    <div class="row mychart" id="chart">
-    </div>
-  </div></p>
-
-<p><script type="text/javascript">
-    &ldquo;use strict&rdquo;</p>
-
-<p>function desenhaBarras(dados) {
-          console.log(dados)
-          var alturaSVG = 400, larguraSVG = 900;
-          var   margin = {top: 0, right: 20, bottom:30, left: 45},
-              larguraVis = larguraSVG - margin.left - margin.right,
-              alturaVis = alturaSVG - margin.top - margin.bottom;</p>
-
-<pre><code>      var grafico = d3.select('#chart')
-        .append('svg')
-          .attr('width', larguraVis + margin.left + margin.right)
-          .attr('height', alturaVis + margin.top + margin.bottom)
-        .append('g')
-          .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
+      <body>
+        <div class="container">
+          <div class="row">
+            <h2>Percentil dos meses chuvosos e não chuvosos</h2>
+          </div>
+          <div class="row mychart" id="chart">
+          </div>
+        </div>
 
 
-    console.log(dados)
+        <script type="text/javascript">
+          "use strict"
 
-    var max90 = d3.max(dados, function(d) {
-        return d['noventa-percentil']+1;
-    });
-
-    var min90 = d3.min(dados, function(d) {
-        return d['noventa-percentil']-1;
-    });
-
-    var x = d3.scaleLinear()
-        x.domain([min90, max90])
-        x.range([0,larguraVis])
-
-    var max10 = d3.max(dados, function(d) {
-        return d['dez_percentil'] +1;
-    });
-
-    var min10 = d3.min(dados, function(d) {
-        return d['dez_percentil']-1;
-    });
-
-    var y = d3.scaleLinear()
-        y.domain([min10,max10])
-        y.range([alturaVis,0]);
-
-    var color = function(dado){
-      if (dado.mes &gt; 0 &amp; dado.mes &lt; 5  ) {
-        return 'blue'
-      }
-      else{
-        return 'orange'
-      }
-
-    }
-
-    function mes(num) {
-      var str = '';
-      if(num === 1){
-        return str = 'Janeiro'
-      }
-      if(num === 2){
-        return str = 'Fevereiro'
-      }
-      if(num === 3){
-        return str = 'Março'
-      }if(num === 4){
-        return str = 'Abril'
-      }if(num === 5){
-        return str = 'Maio'
-      }if(num === 6){
-        return str = 'Junho'
-      }if(num === 7){
-        return str = 'Julho'
-      }if(num === 8){
-        return str = 'Agosto'
-      }if(num === 9){
-        return str = 'Setembro'
-      }if(num === 10){
-        return str = 'Outubro'
-      }if(num === 11){
-        return str = 'Novembro'
-      }if(num === 12){
-        return str = 'Dezembro'
-      }
+        function desenhaBarras(dados) {
+                console.log(dados)
+                var alturaSVG = 400, larguraSVG = 900;
+                var	margin = {top: 0, right: 20, bottom:30, left: 45},
+                    larguraVis = larguraSVG - margin.left - margin.right,
+                    alturaVis = alturaSVG - margin.top - margin.bottom;
 
 
-      return str}
+                var grafico = d3.select('#chart')
+                  .append('svg')
+                    .attr('width', larguraVis + margin.left + margin.right)
+                    .attr('height', alturaVis + margin.top + margin.bottom)
+                  .append('g')
+                    .attr('transform', 'translate(' +  margin.left + ',' + margin.top + ')');
 
-    grafico.selectAll('g')
-            .data(dados)
-            .enter()
-              .append('circle')
-                .attr('cx', d =&gt; x(d['noventa-percentil']))
-                .attr('cy', d =&gt; y(d['dez_percentil']))
-                .attr('r', 10)
-                .attr('height', (d) =&gt; alturaVis - y(d['dez_percentil']))
-                .attr('fill', (d) =&gt; color(d))
 
-    grafico.selectAll('g')
-        .data(dados)
-        .enter()
-        .append('text')
-        .attr(&quot;x&quot;, d =&gt; x(d['noventa-percentil']))
-        .attr(&quot;y&quot;, d =&gt; y(d['dez_percentil']))
-        .text(d =&gt; mes(d.mes));
+              console.log(dados)
 
-    grafico.append(&quot;g&quot;)
-            .attr(&quot;class&quot;, &quot;x axis&quot;)
-            .attr(&quot;transform&quot;, &quot;translate(0,&quot; + alturaVis + &quot;)&quot;)
-            .call(d3.axisBottom(x));
+              var max90 = d3.max(dados, function(d) {
+                  return d['noventa-percentil']+1;
+              });
 
-    grafico.append('g')
-            .attr('transform', 'translate(0,0)')
-            .call(d3.axisLeft(y))
+              var min90 = d3.min(dados, function(d) {
+                  return d['noventa-percentil']-1;
+              });
 
-    grafico.append(&quot;text&quot;)
-      .attr(&quot;transform&quot;, &quot;translate(-40,&quot; + (alturaVis + margin.top)/2 + &quot;) rotate(-90)&quot;)
-      .text(&quot;10 percentil&quot;);
+              var x = d3.scaleLinear()
+                  x.domain([min90, max90])
+                  x.range([0,larguraVis])
 
-    grafico.append(&quot;text&quot;)
-        .attr(&quot;transform&quot;, &quot;translate(&quot; + larguraVis/2 +&quot;,&quot; + (alturaVis+margin.bottom) + &quot;)&quot;)
-        .text(&quot;90 percentil&quot;);
-  }
-d3.json('boqueirao-por-mes.json', function(dados) {
-  console.log(&quot;provavelmente acontece depois&quot;)
-  desenhaBarras(dados);
-});
-console.log(&quot;provavelmente acontece primeiro&quot;)
-</code></pre>
+              var max10 = d3.max(dados, function(d) {
+                  return d['dez_percentil'] +1;
+              });
 
-<p></script>
-</body></p>
+              var min10 = d3.min(dados, function(d) {
+                  return d['dez_percentil']-1;
+              });
+
+              var y = d3.scaleLinear()
+                  y.domain([min10,max10])
+                  y.range([alturaVis,0]);
+
+              var color = function(dado){
+                if (dado.mes > 0 & dado.mes < 5  ) {
+                  return 'blue'
+                }
+                else{
+                  return 'orange'
+                }
+
+              }
+
+              function mes(num) {
+                var str = '';
+                if(num === 1){
+                  return str = 'Janeiro'
+                }
+                if(num === 2){
+                  return str = 'Fevereiro'
+                }
+                if(num === 3){
+                  return str = 'Março'
+                }if(num === 4){
+                  return str = 'Abril'
+                }if(num === 5){
+                  return str = 'Maio'
+                }if(num === 6){
+                  return str = 'Junho'
+                }if(num === 7){
+                  return str = 'Julho'
+                }if(num === 8){
+                  return str = 'Agosto'
+                }if(num === 9){
+                  return str = 'Setembro'
+                }if(num === 10){
+                  return str = 'Outubro'
+                }if(num === 11){
+                  return str = 'Novembro'
+                }if(num === 12){
+                  return str = 'Dezembro'
+                }
+
+
+                return str}
+
+              grafico.selectAll('g')
+                      .data(dados)
+                      .enter()
+                        .append('circle')
+                          .attr('cx', d => x(d['noventa-percentil']))
+                          .attr('cy', d => y(d['dez_percentil']))
+                          .attr('r', 10)
+                          .attr('height', (d) => alturaVis - y(d['dez_percentil']))
+                          .attr('fill', (d) => color(d))
+
+              grafico.selectAll('g')
+        			.data(dados)
+        			.enter()
+        			.append('text')
+        			.attr("x", d => x(d['noventa-percentil']))
+        			.attr("y", d => y(d['dez_percentil']))
+        			.text(d => mes(d.mes));
+
+              grafico.append("g")
+                      .attr("class", "x axis")
+                      .attr("transform", "translate(0," + alturaVis + ")")
+                      .call(d3.axisBottom(x));
+
+              grafico.append('g')
+                      .attr('transform', 'translate(0,0)')
+                      .call(d3.axisLeft(y))
+
+              grafico.append("text")
+                .attr("transform", "translate(-40," + (alturaVis + margin.top)/2 + ") rotate(-90)")
+                .text("10 percentil");
+
+              grafico.append("text")
+                  .attr("transform", "translate(" + larguraVis/2 +"," + (alturaVis+margin.bottom) + ")")
+                  .text("90 percentil");
+            }
+          d3.json('boqueirao-por-mes.json', function(dados) {
+            console.log("provavelmente acontece depois")
+            desenhaBarras(dados);
+          });
+          console.log("provavelmente acontece primeiro")
+
+        </script>
+      </body>
+
 </article>
     <footer class="post-footer">
 
