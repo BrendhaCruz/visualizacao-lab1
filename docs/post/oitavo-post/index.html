@@ -197,7 +197,7 @@
     <article class="post-content"><div id="vis" width=300></div>
       <p>De acordo com os dados extraídos no Observatório do PNE (Plano Nacional de Educação), é possível perceber na visualização abaixo, o número de alunos por computador em cada município do Brasil, com base na escala de cor, quanto maior o número de alunos no computador, em determinada cidade, mais escuro o tom de azul.
       </p>
-      <style>
+      <p><style></p>
           .bar {
           fill: #98abc5;
           }
@@ -306,111 +306,179 @@
 
       </script>
 
-<p></p>
-<p></p>
-<p></p>
-<p></p>
-<style>
+    <br>
+    <br>
+    <br>
 
-  .axis--x path {
-    display: none;
-  }
-  .line {
-    fill: none;
-    stroke: steelblue;
-    stroke-width: 1.5px;
-  }
-     </style>
+      <p><style></p>
 
-     <svg width="960" height="300"></svg>
-     <script src="https://d3js.org/d3.v4.min.js"></script>
-     <script>
-     //var path = 'https://raw.githubusercontent.com/gabrielmla/portfolio/master/dados/lab2-parte4/';
-         var dados = 'bobs.csv';
+      .axis--x path {
+        display: none;
+      }
+      .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 1.5px;
+      }
+         </style>
 
-     var svg = d3.select("svg"),
-         margin = {top: 20, right: 80, bottom: 30, left: 50},
-         width = svg.attr("width") - margin.left - margin.right,
-         height = svg.attr("height") - margin.top - margin.bottom,
-         g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-     var parseTime = d3.timeParse("%H:%M");
-     var x = d3.scaleTime().range([0, width]),
-         y = d3.scaleLinear().range([height, 0]),
-         z = d3.scaleOrdinal(d3.schemeCategory10);
-     var line = d3.line()
-         .curve(d3.curveBasis)
-         .x(function(d) { return x(d.hora); })
-         .y(function(d) { return y(d.quantidade); });
-     d3.csv(dados, type, function(error, data) {
-       if (error) throw error;
-       var categorias = data.columns.slice(1).map(function(id) {
-         return {
-           id: id,
-           values: data.map(function(d) {
-             return {hora: d.horario_inicial, quantidade: d[id]};
-           })
-         };
-       });
-       x.domain(d3.extent(data, function(d) { return d.horario_inicial; }));
-       y.domain([
-         d3.min(categorias, function(c) { return d3.min(c.values, function(d) { return d.quantidade; }); }),
-         d3.max(categorias, function(c) { return d3.max(c.values, function(d) { return d.quantidade; }); })
-       ]);
-       z.domain(categorias.map(function(c) { return c.id; }));
+         <svg width="960" height="300"></svg>
+         <script src="https://d3js.org/d3.v4.min.js"></script>
+         <script>
+         //var path = 'https://raw.githubusercontent.com/gabrielmla/portfolio/master/dados/lab2-parte4/';
+             var dados = 'bobs.csv';
+
+         var svg = d3.select("svg"),
+             margin = {top: 20, right: 80, bottom: 30, left: 50},
+             width = svg.attr("width") - margin.left - margin.right,
+             height = svg.attr("height") - margin.top - margin.bottom,
+             g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+         var parseTime = d3.timeParse("%H:%M");
+         var x = d3.scaleTime().range([0, width]),
+             y = d3.scaleLinear().range([height, 0]),
+             z = d3.scaleOrdinal(d3.schemeCategory10);
+         var line = d3.line()
+             .curve(d3.curveBasis)
+             .x(function(d) { return x(d.hora); })
+             .y(function(d) { return y(d.quantidade); });
+         d3.csv(dados, type, function(error, data) {
+           if (error) throw error;
+           var categorias = data.columns.slice(1).map(function(id) {
+             return {
+               id: id,
+               values: data.map(function(d) {
+                 return {hora: d.horario_inicial, quantidade: d[id]};
+               })
+             };
+           });
+           x.domain(d3.extent(data, function(d) { return d.horario_inicial; }));
+           y.domain([
+             d3.min(categorias, function(c) { return d3.min(c.values, function(d) { return d.quantidade; }); }),
+             d3.max(categorias, function(c) { return d3.max(c.values, function(d) { return d.quantidade; }); })
+           ]);
+           z.domain(categorias.map(function(c) { return c.id; }));
 
 
-       g.append("g")
-           .attr("class", "axis axis--x")
-           .attr("transform", "translate(0," + height + ")")
-           .call(d3.axisBottom(x));
-       g.append("g")
-           .attr("class", "axis axis--y")
-           .call(d3.axisLeft(y))
-         .append("text")
-           .attr("transform", "rotate(-90)")
-           .attr("y", 6)
-           .attr("dy", "0.71em")
-           .attr("fill", "#000");
+           g.append("g")
+               .attr("class", "axis axis--x")
+               .attr("transform", "translate(0," + height + ")")
+               .call(d3.axisBottom(x));
+           g.append("g")
+               .attr("class", "axis axis--y")
+               .call(d3.axisLeft(y))
+             .append("text")
+               .attr("transform", "rotate(-90)")
+               .attr("y", 6)
+               .attr("dy", "0.71em")
+               .attr("fill", "#000");
 
-       var categoria = g.selectAll(".categoria")
-         //.data(dados.filter((d) => d.local == "jackson"))
-         .data(categorias)
-         .enter().append("g")
-           .attr("class", "categoria");
-       categoria.append("path")
-           .attr("class", "line")
-           .attr("d", function(d) { return line(d.values); })
-           .style("stroke", function(d) { return z(d.id); });
+           var categoria = g.selectAll(".categoria")
+             //.data(dados.filter((d) => d.local == "jackson"))
+             .data(categorias)
+             .enter().append("g")
+               .attr("class", "categoria");
+           categoria.append("path")
+               .attr("class", "line")
+               .attr("d", function(d) { return line(d.values); })
+               .style("stroke", function(d) { return z(d.id); });
+           categoria.append("text")
+               .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+               .attr("transform", function(d) { return "translate(" + x(d.value.hora) + "," + y(d.value.quantidade) + ")"; })
+               .attr("x", 3)
+               .attr("dy", "0.35em")
+               .style("font", "10px sans-serif")
+               .text(function(d) { return d.id; });
+
+
+        categoria.append("text")
+          .attr("transform", "translate(-30," + (height + margin.top)/2 + ") rotate(-90)")
+         .style("font", "12px sans-serif")
+         .text("Quantidade Ciclistas");
+
        categoria.append("text")
-           .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
-           .attr("transform", function(d) { return "translate(" + x(d.value.hora) + "," + y(d.value.quantidade) + ")"; })
-           .attr("x", 3)
-           .attr("dy", "0.35em")
-           .style("font", "10px sans-serif")
-           .text(function(d) { return d.id; });
+           //.attr("transform", "translate(" + width + ")")
+            .attr("transform", "translate(" + width/2 +"," + (height+margin.bottom) + ")")
+           .style("font", "12px sans-serif")
+           .text("Horário");
+
+         });
+
+         function type(d, _, columns) {
+             d.horario_inicial = parseTime(d.horario_inicial);
+           for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
+           return d;
+         }
 
 
-    categoria.append("text")
-      .attr("transform", "translate(-30," + (height + margin.top)/2 + ") rotate(-90)")
-     .style("font", "12px sans-serif")
-     .text("Quantidade Ciclistas");
+      </script>
 
-   categoria.append("text")
-       //.attr("transform", "translate(" + width + ")")
-        .attr("transform", "translate(" + width/2 +"," + (height+margin.bottom) + ")")
-       .style("font", "12px sans-serif")
-       .text("Horário");
+      <br>
+      <br>
+      <br>
 
-     });
+        <p><div id="chart"></p>
 
-     function type(d, _, columns) {
-         d.horario_inicial = parseTime(d.horario_inicial);
-       for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
-       return d;
-     }
+        <style>
+
+      .arc text {
+        font: 10px sans-serif;
+        text-anchor: middle;
+      }
+
+      .arc path {
+        stroke: #fff;
+      }
+           </style>
 
 
-  </script>
+
+    <svg width="960" height="500"></svg>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script >
+    function geraGrafico(data) {
+            var width = 700,
+                height = 250,
+                radius = Math.min(width, height) / 2;
+            var color = ["#98abc5", "#F5A9D0"];
+            var svg = d3.select("#chart").append("svg")
+                .attr("width", width)
+                .attr("height", height)
+              .append("g")
+                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+            var arc = d3.arc()
+                .outerRadius(radius - 10)
+                .innerRadius(0);
+            var labelArc = d3.arc()
+                .outerRadius(radius - 40)
+                .innerRadius(radius - 40);
+            var pie = d3.pie()
+                .sort(null)
+                .value(function(d) { return d; });
+              var g = svg.selectAll(".arc")
+                  .data(pie(data))
+                .enter().append("g")
+                  .attr("class", "arc");
+              g.append("path")
+                  .attr("d", arc)
+                  .style("fill", function(d, i) { return color[i]; });
+              g.append("text")
+                  .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+                  .attr("dy", ".35em")
+                  .text(function(d) { return d.data + "%" ; });
+            }
+
+           d3.csv("bobs.csv", function(d) {
+             var homens = Math.round((d3.sum(d, function(d){return parseFloat(d.homens_ciclistas);})) /
+                                 (d3.sum(d, function(d){return parseFloat(d.total_ciclistas);})) * 100);
+
+              var mulheres = Math.round((d3.sum(d, function(d){return parseFloat(d.mulheres_ciclistas);})) /
+                               (d3.sum(d, function(d){return parseFloat(d.total_ciclistas);})) * 100);
+              var dados = [ homens, mulheres ];
+             geraGrafico(dados);
+           });
+
+      </script>
+
 </article>
     <footer class="post-footer">
 

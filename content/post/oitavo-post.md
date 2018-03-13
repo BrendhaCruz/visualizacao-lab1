@@ -8,7 +8,7 @@ draft: false
 ---
 
 
-  <style>
+  <p><style></p>
       .bar {
       fill: #98abc5;
       }
@@ -117,8 +117,11 @@ console.log(nest)
 
   </script>
 
+<br>
+<br>
+<br>
 
-  <style>
+  <p><style></p>
 
   .axis--x path {
     display: none;
@@ -217,5 +220,72 @@ console.log(nest)
        return d;
      }
 
+
+  </script>
+
+  <br>
+  <br>
+  <br>
+
+    <p><div id="chart"></p>
+
+    <style>
+
+  .arc text {
+    font: 10px sans-serif;
+    text-anchor: middle;
+  }
+
+  .arc path {
+    stroke: #fff;
+  }
+       </style>
+
+
+
+<svg width="960" height="500"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script >
+function geraGrafico(data) {
+        var width = 700,
+            height = 250,
+            radius = Math.min(width, height) / 2;
+        var color = ["#98abc5", "#F5A9D0"];
+        var svg = d3.select("#chart").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+          .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        var arc = d3.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(0);
+        var labelArc = d3.arc()
+            .outerRadius(radius - 40)
+            .innerRadius(radius - 40);
+        var pie = d3.pie()
+            .sort(null)
+            .value(function(d) { return d; });
+          var g = svg.selectAll(".arc")
+              .data(pie(data))
+            .enter().append("g")
+              .attr("class", "arc");
+          g.append("path")
+              .attr("d", arc)
+              .style("fill", function(d, i) { return color[i]; });
+          g.append("text")
+              .attr("transform", function(d) { return "translate(" + labelArc.centroid(d) + ")"; })
+              .attr("dy", ".35em")
+              .text(function(d) { return d.data + "%" ; });
+        }
+
+       d3.csv("bobs.csv", function(d) {
+         var homens = Math.round((d3.sum(d, function(d){return parseFloat(d.homens_ciclistas);})) /
+                             (d3.sum(d, function(d){return parseFloat(d.total_ciclistas);})) * 100);
+
+          var mulheres = Math.round((d3.sum(d, function(d){return parseFloat(d.mulheres_ciclistas);})) /
+                           (d3.sum(d, function(d){return parseFloat(d.total_ciclistas);})) * 100);
+          var dados = [ homens, mulheres ];
+         geraGrafico(dados);
+       });
 
   </script>
