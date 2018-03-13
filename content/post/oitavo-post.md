@@ -118,10 +118,10 @@ console.log(nest)
   </script>
 
 <br>
-<br>
-<br>
 
-  <p><style></p>
+
+<p><div id="graph"></div></p>
+  <style>
 
   .axis--x path {
     display: none;
@@ -223,8 +223,6 @@ console.log(nest)
 
   </script>
 
-  <br>
-  <br>
   <br>
 
     <p><div id="chart"></p>
