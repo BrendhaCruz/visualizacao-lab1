@@ -41,7 +41,7 @@ d3.json('mytop50.json', function (error, graph) {
     return nodes[j].genres.indexOf(n) !== -1;});
 
         if(common.length > 0){
-          edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("indie rock")? "indie rock": common.includes("indie rock")? "indie rock": common[0]})
+          edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("modern rock")? "modern rock": common.includes("modern rock")? "modern rock": common[0]})
         }
       }
     }
