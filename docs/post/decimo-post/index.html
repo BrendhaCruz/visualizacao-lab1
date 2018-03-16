@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8" />
+
+
+  <title>"Top 50 no Spotify"</title>
+
+
+
+
+
+
+
+
+  <meta name="author" content="brendhacruz" />
+  <meta name="description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
+
+
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@gohugoio" />
+    <meta name="twitter:title" content="Top 50 no Spotify" />
+    <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
+    <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
+
+
+
+
+
+<meta name="generator" content="Hugo 0.30.2" />
+
+
+<link rel="canonical" href="https://brendhacruz.github.io/visualizacao-lab1/post/decimo-post/" />
+<link rel="alternative" href="https://brendhacruz.github.io/visualizacao-lab1/index.xml" title="Visualização" type="application/atom+xml" />
+
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+
+
+<meta name="robots" content="index,follow" />
+<meta name="referrer" content="origin-when-cross-origin" />
+<meta name="google-site-verification" content="_moDmnnBNVLBN1rzNxyGUGdPHE20YgbmrtzLIbxaWFc" />
+<meta name="msvalidate.01" content="22596E34341DD1D17D6022C44647E587" />
+
+
+
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Visualização" />
+<meta name="msapplication-tooltip" content="Visualização" />
+<meta name='msapplication-navbutton-color' content="#5fbf5e" />
+<meta name="msapplication-TileColor" content="#5fbf5e" />
+<meta name="msapplication-TileImage" content="/img/tile-image-windows.png" />
+<link rel="icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="https://brendhacruz.github.io/visualizacao-lab1/img/favicon-32x32.png" />
+<link rel="icon" sizes="192x192" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-android.png" />
+<link rel="apple-touch-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/touch-icon-apple.png" />
+<link rel="mask-icon" href="https://brendhacruz.github.io/visualizacao-lab1/img/safari-pinned-tab.svg" color="#5fbf5e" />
+
+
+
+<link rel="stylesheet" href="//cdn.bootcss.com/video.js/6.2.8/alt/video-js-cdn.min.css" />
+
+<link rel="stylesheet" href="https://brendhacruz.github.io/visualizacao-lab1/css/bundle.css" />
+
+
+
+  <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.bootcss.com/video.js/6.2.8/ie8/videojs-ie8.min.js"></script>
+  <![endif]-->
+
+<!--[if lte IE 11]>
+    <script src="//cdn.bootcss.com/classlist/1.1.20170427/classList.min.js"></script>
+  <![endif]-->
+
+
+<script src="//cdn.bootcss.com/object-fit-images/3.2.3/ofi.min.js"></script>
+
+
+<script src="//cdn.bootcss.com/smooth-scroll/12.1.4/js/smooth-scroll.polyfills.min.js"></script>
+
+
+</head>
+  <body>
+
+    <div class="suspension">
+      <a title="Go to top" class="to-top is-hide"><span class="icon icon-up"></span></a>
+
+
+        <a title="Go to comments" class="to-comment" href="#disqus_thread"><span class="icon icon-comment"></span></a>
+
+
+    </div>
+
+
+  <header class="site-header">
+  <img class="avatar" src="https://brendhacruz.github.io/visualizacao-lab1/img/avatar.jpg" alt="Avatar">
+
+  <h2 class="title">Visualização</h2>
+
+  <p class="subtitle">Visualização de Gráficos</p>
+  <button class="menu-toggle" type="button">
+    <span class="icon icon-menu"></span>
+  </button>
+  <nav class="site-menu collapsed">
+    <h2 class="offscreen">Main Menu</h2>
+    <ul class="menu-list">
+
+
+
+
+        <li class="menu-item  is-active"><a href="https://brendhacruz.github.io/visualizacao-lab1/">Home</a></li>
+
+        <li class="menu-item "><a href="https://bl.ocks.org/BrendhaCruz/d43da7dacb434031dbf48f37819f26cb#file-lab01visualizacao-json">Primeiro Gráfico</a></li>
+
+    </ul>
+  </nav>
+  <nav class="social-menu collapsed">
+    <h2 class="offscreen">Social Networks</h2>
+    <ul class="social-list">
+
+
+      <li class="social-item">
+        <a href="mailto:brendha.cruz@gmail.com" title="Email"><span class="icon icon-email"></span></a>
+      </li>
+
+
+      <li class="social-item">
+        <a href="//github.com/brendhaCruz" title="GitHub"><span class="icon icon-github"></span></a>
+      </li>
+
+
+
+      <li class="social-item">
+        <a href="//www.facebook.com/Brendha%20Cruz" title="Facebook"><span class="icon icon-facebook"></span></a>
+      </li>
+
+
+
+      <li class="social-item">
+        <a href="//www.instagram.com/@brendha_cruz" title="Instagram"><span class="icon icon-instagram"></span></a>
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <li class="social-item">
+        <a href="https://brendhacruz.github.io/visualizacao-lab1/index.xml"><span class="icon icon-rss" title="RSS"></span></a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+  <section class="main post-detail">
+    <header class="post-header">
+      <h1 class="post-title">Top 50 no Spotify</h1>
+      <p class="post-meta">@brendhacruz · Mar 15, 2018 · 1 min read</p>
+    </header>
+    <article class="post-content"><div id="vis" width=300></div>
+      <p></p>
+
+      <section>
+                  <svg width="930" height="630">
+                      <defs>
+                          <filter id="greyscale">
+                              <feColorMatrix
+                                      type="matrix"
+                                      values="0 1 0 0 0
+                                              0 1 0 0 0
+                                              0 1 0 0 0
+                                              0 1 0 1 0 ">
+                              </feColorMatrix>
+                          </filter>
+                      </defs>
+                  </svg>
+              </section>
+
+      				<script src="https://d3js.org/d3.v4.min.js"></script>
+      				<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
+      				<script>
+
+      				const svg = d3.select('svg'),
+          width = +svg.attr('width'),
+          height = +svg.attr('height');
+
+      const tooltipDiv = d3.select("body")
+          .append("div")
+          .attr("class", "tooltip")
+          .style("opacity", 0);
+
+
+      const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+      const simulation = d3.forceSimulation()
+          .force('link', d3.forceLink().id(d => d.id))
+          .force('collide', d3.forceCollide(30))
+          .force('center', d3.forceCenter((width / 2), height / 2))
+          .force('genreX', d3.forceX(genreX).strength(0.02))
+          .force('genreY', d3.forceY(genreY));
+
+      svg.append('g')
+          .attr('class', 'category-legend')
+          .attr('transform', 'translate(20,20)');
+
+      const legend = d3.legendColor()
+          .shape('circle')
+          .shapeRadius('5')
+          .orient('vertical')
+          .classPrefix('legend');
+
+
+      d3.json('mytop50.json', function (error, graph) {
+        var nodes = (graph.items).map((e) => ({"id": e.id, "name": e.name, "genres": e.genres, "img": e.images[1].url, "url": e.external_urls.spotify}))
+       var edges = []
+
+       for(var i = 0; i < nodes.length; i++){
+         for(var j = i+1; j < nodes.length; j++){
+           var common = common = $.grep(nodes[i].genres, function(element) {
+                                 return $.inArray(element, nodes[j].genres ) !== -1;});
+
+           if(common.length > 0){
+             edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("modern rock")? "modern rock": common[0]})
+           }
+         }
+       }
+
+       graph = {"nodes": nodes, "edges": edges}
+
+
+       if (error) throw error;
+
+
+          const types = d3.set(graph.edges.map(e => e.type)).values();
+          color.domain(types);
+
+          legend
+              .scale(color)
+              .on('cellover', c => {
+                  d3.selectAll('.links line')
+                      .transition().duration(200)
+                      .attr('opacity', d => d.type === c ? 1 : 0);
+
+                  d3.selectAll('.node image')
+                      .filter(n => {
+                         return graph.edges
+                             .filter(e => e.type === c)
+                             .find(e => e.source.id === n.id || e.target.id === n.id) !== undefined;
+                      })
+                      .attr('x', n => -33)
+                      .attr('y', n => -33)
+                      .attr('width', 66)
+                      .attr('height', 66);
+              })
+              .on('cellout', () => {
+                  d3.selectAll('.links line')
+                      .transition().duration(200)
+                      .attr('opacity', 1);
+
+                  d3.selectAll('.node image')
+                      .attr('x', n => -25)
+                      .attr('y', n => -25)
+                      .attr('width', 50)
+                      .attr('height', 50);
+              });
+
+          svg.select('.category-legend')
+              .call(legend);
+
+          const link = svg.append('g')
+              .attr('class', 'links')
+              .selectAll('line')
+              .data(graph.edges)
+              .enter()
+              .append('line')
+              .style('stroke', e => color(e.type))
+              .attr('stroke-width', 1)
+              .on('mouseover', d => {
+                  d3.selectAll('.legendlabel')
+                      .filter(l => l === d.type)
+                      .classed('legend-hover', true);
+              })
+              .on('mouseout', () => {
+                  d3.selectAll('.legendlabel')
+                      .classed('legend-hover', false);
+              });
+
+          const nodeGroup = svg.append('g')
+              .attr('class', 'nodes')
+              .selectAll('.node')
+              .data(graph.nodes)
+              .enter()
+              .append('g')
+              .attr('class', 'node')
+              .call(d3.drag()
+                  .on('start', dragstarted)
+                  .on('drag', dragged)
+                  .on('end', dragended));
+
+          nodeGroup
+              .append('image')
+              .attr('xlink:href', d => d.img)
+              .attr('x', -25)
+              .attr('y', -25)
+              .attr('width', 50)
+              .attr('height', 50)
+              .on('mouseover', (d, i, nodes) => {
+                  svg.selectAll('.links line')
+                      .transition()
+                      .duration(200)
+                      .attr('opacity', e => d.id === e.source.id || d.id === e.target.id ? 1 : 0);
+
+                  tooltipDiv.transition()
+                      .duration(200)
+                      .style('opacity', 0.7);
+                  tooltipDiv.html(`${d.name}`)
+                      .style("left", d3.event.pageX + "px")
+                      .style("top", d3.event.pageY + "px");
+
+                  d3.selectAll(nodes)
+                      .classed('greyed', n => n.id !== d.id && !isAdjacent(d, n))
+                      .transition().duration(200)
+                      .attr('x', n => isAdjacent(d, n) ? -33 : -25)
+                      .attr('y', n => isAdjacent(d, n) ? -33 : -25)
+                      .attr('width', n => isAdjacent(d, n) ? 66 : 50)
+                      .attr('height', n => isAdjacent(d, n) ? 66 : 50);
+
+                  d3.select(nodes[i])
+                      .transition()
+                      .duration(200)
+                      .attr('x', -40)
+                      .attr('y', -40)
+                      .attr('width', 80)
+                      .attr('height', 80);
+
+                  d3.selectAll('.legendlabel')
+                      .filter(l => {
+                          return graph.edges
+                              .filter(e => e.source.id === d.id || e.target.id === d.id)
+                              .map(e => e.type)
+                              .includes(l);
+                      })
+                      .classed('legend-hover', true);
+
+              })
+              .on('mouseout', (d, i, nodes) => {
+                  svg.selectAll('.links line')
+                      .transition()
+                      .duration(200)
+                      .attr('opacity', 1)
+                      .attr('stroke-width', 1)
+                      .style('stroke', e => color(e.type));
+
+                  tooltipDiv.transition()
+                      .duration(200)
+                      .style('opacity', 0);
+
+                  d3.selectAll(nodes)
+                      .classed('greyed', false)
+                      .transition()
+                      .duration(200)
+                      .attr('x', -25)
+                      .attr('y', -25)
+                      .attr('width', 50)
+                      .attr('height', 50);
+
+                  d3.selectAll('.legendlabel')
+                      .classed('legend-hover', false);
+                  const node = d3.selectAll('.node')
+                      .filter(n => d.id === n.id);
+
+                  node.select('rect')
+                      .remove();
+
+                  node.select('text')
+                      .remove();
+              })
+              .on('click', d => window.open(d.url));
+
+          simulation
+              .nodes(graph.nodes)
+              .on('tick', ticked);
+
+          simulation.force('link')
+              .links(graph.edges);
+
+          function ticked() {
+              link
+                  .attr('x1', d => d.source.x)
+                  .attr('y1', d => d.source.y)
+                  .attr('x2', d =>  d.target.x)
+                  .attr('y2', d => d.target.y);
+
+              nodeGroup.attr('transform', d => `translate(${d.x}, ${d.y})`);
+          }
+
+          function isAdjacent(source, node) {
+              return graph.edges
+                  .filter(e => e.source.id === source.id || e.target.id === source.id)
+                  .find(e => e.target.id === node.id || e.source.id === node.id) !== undefined;
+          }
+      });
+
+      function dragstarted(d) {
+          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+      }
+
+      function dragged(d) {
+          d.fx = d3.event.x;
+          d.fy = d3.event.y;
+      }
+
+      function genreX(n) {
+          const genres = n.genres.join('-');
+          if (genres.includes('indie rock') || genres.includes('modern rock')) {
+              return width / 4 * 3;
+          } else if (genres.includes('indie folk')) {
+              return width / 4;
+          } else {
+              return width;
+          }
+      }
+
+      function genreY(n) {
+          const genres = n.genres.join('-');
+          if (genres.length === 0 && !genres.includes('indie rock') && !genres.includes('modern rock') && genres.includes('house')) {
+              return height / 4;
+          } else {
+              return height / 2;
+          }
+      }
+
+      function dragended(d) {
+          if (!d3.event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+      }
+
+
+
+
+</script>
+
+</article>
+    <footer class="post-footer">
+
+      <p class="post-copyright">
+        � Todas as fotes para obtenção dos dados são seguras. Fontes: ANA, AESA, IBGE.This post was published <strong>101</strong> days ago, content in the post may be inaccurate, even wrong now, please take risk yourself.
+      </p>
+
+      <ul class="icons">
+          <li><a href="https://github.com/ss1993/my-spotify-top50" class="icon fa-github"><span class="label">Github</span></a></li>
+      </ul>
+
+      <ul class="copyright">
+          <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+
+    </footer>
+    <p></p>
+    <p></p>
+   <p></p>
+
+      <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+
+
+
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "disqus_shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  </section>
+  <footer class="site-footer">
+  <p>© 2017-2018 Visualização</p>
+  <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/laozhu/hugo-nuo" target="_blank">Nuo</a>.</p>
+
+</footer>
+
+
+
+<script async src="//cdn.bootcss.com/video.js/6.2.8/alt/video.novtt.min.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\[','\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      TeX: { equationNumbers: { autoNumber: "AMS" },
+      extensions: ["AMSmath.js", "AMSsymbols.js"] }
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+  // Fix <code> tags after MathJax finishes running. This is a
+  // hack to overcome a shortcoming of Markdown. Discussion at
+  // https://github.com/mojombo/jekyll/issues/199
+  MathJax.Hub.Queue(() => {
+    MathJax.Hub.getAllJax().map(v => v.SourceElement().parentNode.className += ' has-jax');
+  });
+</script>
+
+<script src="https://brendhacruz.github.io/visualizacao-lab1/js/bundle.js"></script>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-XXXXXXXX-X', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+  </body>
+</html>
