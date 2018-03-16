@@ -1,6 +1,8 @@
 const svg = d3.select('svg'),
-      width = +svg.attr('width'),
-      height = +svg.attr('height');
+    width = 600,
+    height = 600;
+    svg.attr('viewBox', '0 0 '+width+' '+height)
+    .attr('width', '100%');
 
 const tooltipDiv = d3.select("body")
     .append("div")
@@ -28,30 +30,29 @@ const legend = d3.legendColor()
     .classPrefix('legend');
 
 
-    d3.json('mytop50.json', function (error, json) {
-        if (error) throw error;
+d3.json('mytop50.json', function (error, graph) {
 
-        var artists  = json.items;
-        var nodes = artists.map(createNodes);
-        var edges = artists.map(createEdges);
-        var d = [];
+    var nodes = (graph.items).map((e) => ({"id": e.id, "name": e.name, "genres": e.genres, "img": e.images[2].url, "url": e.external_urls.spotify}))
+    var edges = []
 
-        // Deixa os edges concatenados, tira dos arrays
-        for(var i = 0; i < edges.length; i++){
-          for(var j = 0; j < edges[i].length; j++){
-            if(!d.includes(edges[i][j])){
-              d.push(edges[i][j]);
-            }
-          }
+    for(var i = 0; i < nodes.length; i++){
+      for(var j = i+1; j < nodes.length; j++){
+        var common  = nodes[i].genres.filter(function(n) {
+    return nodes[j].genres.indexOf(n) !== -1;});
+
+        if(common.length > 0){
+          edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("mpb")? "mpb": common.includes("mpb")? "mpb": common[0]})
         }
+      }
+    }
 
-        var graph = {nodes: nodes, edges: d};
-
-    console.log(d);
+    graph = {"nodes": nodes, "edges": edges}
 
 
-const types = d3.set(graph.edges.map(e => e.type)).values();
-color.domain(types);
+    if (error) throw error;
+
+    const types = d3.set(graph.edges.map(e => e.type)).values();
+    color.domain(types);
 
     legend
         .scale(color)
@@ -132,7 +133,7 @@ color.domain(types);
             tooltipDiv.transition()
                 .duration(200)
                 .style('opacity', 0.7);
-            tooltipDiv.html(`${d.name}`)
+            tooltipDiv.html(`${d.name} - ${d.genres}`)
                 .style("left", d3.event.pageX + "px")
                 .style("top", d3.event.pageY + "px");
 
@@ -233,9 +234,9 @@ function dragged(d) {
 
 function genreX(n) {
     const genres = n.genres.join('-');
-    if (genres.includes('indie rock') || genres.includes('modern rock')) {
+    if (genres.includes('hip hop') || genres.includes('rap')) {
         return width / 4 * 3;
-    } else if (genres.includes('indie folk')) {
+    } else if (genres.includes('house')) {
         return width / 4;
     } else {
         return width;
@@ -244,7 +245,7 @@ function genreX(n) {
 
 function genreY(n) {
     const genres = n.genres.join('-');
-    if (genres.length === 0 && !genres.includes('indie rock') && !genres.includes('modern rock') && genres.includes('house')) {
+    if (genres.length === 0 && !genres.includes('hip hop') && !genres.includes('rap') && genres.includes('house')) {
         return height / 4;
     } else {
         return height / 2;
@@ -255,25 +256,4 @@ function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(0);
     d.fx = null;
     d.fy = null;
-}
-
-function createEdges(element, index, array){
-    var edges = [];
-    for(var i = 0; i < array.length; i++){
-      if(array[i].id != element.id){
-        for(var j = 0; j < element.genres.length; j++){
-          for(var k = 0; k < array[i].genres.length; k++){
-            if(element.genres[j] === array[i].genres[k]){
-              var edge = {source: element.id, target: array[i].id, type: element.genres[j]};
-              edges.push(edge);
-            }
-          }
-        }
-      }
-    }
-    return edges;
-}
-
-function createNodes(element, index, array){
-  return {id: element.id, name: element.name, img: element.images[2].url, url: element.external_urls.spotify, genres: element.genres};
 }
