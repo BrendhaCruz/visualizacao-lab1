@@ -195,7 +195,8 @@
       <p class="post-meta">@brendhacruz · Mar 15, 2018 · 1 min read</p>
     </header>
     <article class="post-content"><div id="vis" width=300></div>
-     <p>/Qual a relação entre os artistas que você mais escuta no Spotify?</p>
+     <p>Qual a relação entre os artistas que você mais escuta no Spotify?</p>
+     <p>A visualização abaixo mostra uma rede formada por alguns dos artistas que mais escuto no meu Spotify. Também é possível percber que eles estão conectados com base em seu gênero musical.</p>
       <div class="container">
           <svg >
               <defs>
@@ -233,7 +234,7 @@
 
             const simulation = d3.forceSimulation()
                 .force('link', d3.forceLink().id(d => d.id))
-                .force('collide', d3.forceCollide(60))
+                .force('collide', d3.forceCollide(50))
                 .force('center', d3.forceCenter((width / 2), height / 2))
                 .force('genreX', d3.forceX(genreX).strength(0.02))
                 .force('genreY', d3.forceY(genreY));
@@ -480,7 +481,9 @@
 
       </script>
 
-
+<p>Cada gênero musical é representado por uma cor diferente, como é possivel perceber na legenda acima. Existem formações de pequenos grupos de artistas que estão relacionados por gênero, outros não são compatíveis com nenhum dos gêneros acima, e ficaram soltos da rede.</p>
+<p>Assim é possível perceber o que é mais tocado no seu Spotify. E pra quem quiser conhecer mais sobre os artistas, basta clicar em um deles, que você será direcionado para a página do mesmo no spotify.</p>
+<p>A grande maioria dos artistas que escuto fazem parte do gênero modern rock, indie rock ou alternative rock, que são gêneros similares.</p>
 </article>
     <footer class="post-footer">
 
