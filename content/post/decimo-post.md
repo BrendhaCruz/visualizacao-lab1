@@ -9,7 +9,7 @@ draft: false
 
 <div id="greyscale">
 </div>
-
+<link rel="stylesheet" href="../style.css">
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.24.0/d3-legend.js"></script>
 <script>
@@ -29,7 +29,7 @@ const color = d3.scaleOrdinal(d3.schemeCategory20);
 
 const simulation = d3.forceSimulation()
     .force('link', d3.forceLink().id(d => d.id))
-    .force('collide', d3.forceCollide(30))
+    .force('collide', d3.forceCollide(60))
     .force('center', d3.forceCenter((width / 2), height / 2))
     .force('genreX', d3.forceX(genreX).strength(0.02))
     .force('genreY', d3.forceY(genreY));
@@ -56,7 +56,7 @@ d3.json('mytop50.json', function (error, graph) {
     return nodes[j].genres.indexOf(n) !== -1;});
 
         if(common.length > 0){
-          edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("modern rock")? "modern rock": common.includes("modern rock")? "modern rock": common[0]})
+          edges.push({"source": nodes[i].id, "target": nodes[j].id, "type": common.includes("indie rock")? "indie rock": common.includes("indie rock")? "indie rock": common[0]})
         }
       }
     }
