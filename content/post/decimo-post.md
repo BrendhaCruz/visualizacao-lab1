@@ -212,6 +212,17 @@ d3.json('mytop50.json', function (error, graph) {
         })
         .on('click', d => window.open(d.url));
 
+				//add zoom capabilities
+				var zoom_handler = d3.zoom()
+				    .on("zoom", zoom_actions);
+
+				zoom_handler(svg);
+
+				//specify what to do when zoom event listener is triggered
+				function zoom_actions(){
+				d3.selectAll("g").attr("transform", d3.event.transform);
+				}
+
     simulation
         .nodes(graph.nodes)
         .on('tick', ticked);

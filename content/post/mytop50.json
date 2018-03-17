@@ -369,34 +369,6 @@
     "uri" : "spotify:artist:7jdFEYD2LTYjfwxOdlVjmc"
   }, {
     "external_urls" : {
-      "spotify" : "https://open.spotify.com/artist/72G62rG7kmq4GFOzyjJV4q"
-    },
-    "followers" : {
-      "href" : null,
-      "total" : 124372
-    },
-    "genres" : [ "brazilian ccm" ],
-    "href" : "https://api.spotify.com/v1/artists/72G62rG7kmq4GFOzyjJV4q",
-    "id" : "72G62rG7kmq4GFOzyjJV4q",
-    "images" : [ {
-      "height" : 640,
-      "url" : "https://i.scdn.co/image/73133194b80abf03893e79188190997857572a30",
-      "width" : 640
-    }, {
-      "height" : 320,
-      "url" : "https://i.scdn.co/image/57857eebefc7ff17552791ffa3bdb33a911ecd1a",
-      "width" : 320
-    }, {
-      "height" : 160,
-      "url" : "https://i.scdn.co/image/e86b74f471f65e62876cb69546ded145ee1b8116",
-      "width" : 160
-    } ],
-    "name" : "Padre Fábio De Melo",
-    "popularity" : 55,
-    "type" : "artist",
-    "uri" : "spotify:artist:72G62rG7kmq4GFOzyjJV4q"
-  }, {
-    "external_urls" : {
       "spotify" : "https://open.spotify.com/artist/1w5Kfo2jwwIPruYS2UWh56"
     },
     "followers" : {
