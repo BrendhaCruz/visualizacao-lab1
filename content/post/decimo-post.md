@@ -1,6 +1,6 @@
 ---
 
-title: "Top 50 no Spotify"
+title: "Top no Spotify"
 
 date: 2018-03-015T23:38:58-02:00
 
@@ -29,7 +29,7 @@ const color = d3.scaleOrdinal(d3.schemeCategory20);
 
 const simulation = d3.forceSimulation()
     .force('link', d3.forceLink().id(d => d.id))
-    .force('collide', d3.forceCollide(30))
+    .force('collide', d3.forceCollide(60))
     .force('center', d3.forceCenter((width / 2), height / 2))
     .force('genreX', d3.forceX(genreX).strength(0.02))
     .force('genreY', d3.forceY(genreY));

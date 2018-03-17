@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
 
 
-  <title>"Top 50 no Spotify"</title>
+  <title>"Top no Spotify"</title>
 
 
 
@@ -21,7 +21,7 @@
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@gohugoio" />
-    <meta name="twitter:title" content="Top 50 no Spotify" />
+    <meta name="twitter:title" content="Top no Spotify" />
     <meta name="twitter:description" content="const spec = { &#34;$schema&#34;: &#34;https://vega.github.io/schema/vega-lite/v2.json&#34;, &#34;layer&#34;: [{ &#34;data&#34;: { &#34;url&#34;: &#34;https://api.insa.gov.br/reservatorios/12172/monitoramento&#34;, &#34;format&#34;: { &#34;type&#34;: &#34;json&#34;, &#34;property&#34;: &#34;volumes&#34;, &#34;parse&#34;: { &#34;DataInformacao&#34;: &#34;utc:&#39;%d/%m/%Y&#39;&#34; } } }, &#34;width&#34;: 900, &#34;height&#34;: 150, &#34;mark&#34;: { &#34;type&#34;: &#34;area&#34;, &#34;interpolate&#34;: &#34;monotone&#34; }, &#34;selection&#34;: { &#34;brush&#34;: {&#34;type&#34;: &#34;interval&#34;, &#34;encodings&#34;: [&#34;x&#34;]} }, &#34;encoding&#34;: { &#34;x&#34;: { &#34;timeUnit&#34; : &#34;monthyear&#34;, &#34;field&#34;: &#34;DataInformacao&#34;, &#34;type&#34;: &#34;temporal&#34;, &#34;axis&#34;: {&#34;format&#34;: &#34;%Y&#34;, &#34;title&#34; : &#34;Volume ao longo dos anos&#34;} }, &#34;" />
     <meta name="twitter:image" content="https://brendhacruz.github.io/img/avatar.jpg" />
 
@@ -191,11 +191,11 @@
 
   <section class="main post-detail">
     <header class="post-header">
-      <h1 class="post-title">Top 50 no Spotify</h1>
+      <h1 class="post-title">Top no Spotify</h1>
       <p class="post-meta">@brendhacruz · Mar 15, 2018 · 1 min read</p>
     </header>
     <article class="post-content"><div id="vis" width=300></div>
-
+     <p>/Qual a relação entre os artistas que você mais escuta no Spotify?</p>
       <div class="container">
           <svg >
               <defs>
@@ -233,7 +233,7 @@
 
             const simulation = d3.forceSimulation()
                 .force('link', d3.forceLink().id(d => d.id))
-                .force('collide', d3.forceCollide(30))
+                .force('collide', d3.forceCollide(60))
                 .force('center', d3.forceCenter((width / 2), height / 2))
                 .force('genreX', d3.forceX(genreX).strength(0.02))
                 .force('genreY', d3.forceY(genreY));
